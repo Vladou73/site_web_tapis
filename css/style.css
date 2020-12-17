@@ -1,0 +1,575 @@
+/* Styles globaux */
+body {
+    font-family: sans-serif;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    /* background-color: #F0EEEE; */
+}
+
+.body-container {
+    width: 80%;
+}
+
+/* HEADER */
+
+.header-top {
+    display:flex;
+    background-color: #F0EEEE;
+    padding:1rem;
+}
+
+.header-top__left {
+    width:50%;
+}
+
+.logo {
+    display: flex;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem ;
+    align-items: flex-end;
+}
+
+.logo__img {
+    width: 2.5rem;
+    margin-left: 0.5rem;
+}
+
+.header-top__tagline-presta {
+    font-weight: bold;
+    font-style: italic;
+    /* font-size: 0.8rem; */
+}
+
+.header-top__right {
+    width:50%;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-top__tagline-spe {
+    width: 100%;
+    font-size: 0.9rem;
+    display:flex;
+    justify-content: center;
+}
+
+
+/* BUTTONS */
+
+.button {
+    padding:0.6rem;
+    font-weight: bold;
+}
+
+.button--red {
+    background-color: #A10B0B;
+    color: white;
+}
+
+.button--dark-red {
+    background-color: #340404;
+    color: white;
+}
+
+.button--grey {
+    background-color: #A79E9E;
+    color: black;
+}
+
+.button--gold {
+    background-color: #C9C68B;
+    color: black;
+}
+
+/* NAVIGATION */
+
+.header-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top:0px;
+}
+
+.header-nav__sub-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 0.8rem;
+    background-color: black;
+}
+
+.header-nav__sub-container__item {
+    color: #b2b2b2;
+    font-weight: bold;
+    transition: color .3s ease 0s;
+}
+
+.header-nav__sub-container__item:hover {
+    color: white;
+}
+
+
+/* COVID */
+.header-covid {
+    background-color: #FEE1E1;
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem;
+
+    color: #CF4949;
+    font-size: 0.9rem;
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* HOME MAIN */
+
+.home-section {
+    height: 600px;
+    background: no-repeat center center;
+    background-size: cover;
+    display: flex;
+}
+
+.home-section__1 {
+    background-image: url(../assets/interieur1.jpg);
+    justify-content: flex-end;
+}
+
+.home-section__2 {
+    background-image: url(../assets/home2.jpg);
+    justify-content: flex-start;
+}
+
+.home-section__3 {
+    background-image: url(../assets/home3.jpg);
+    justify-content: flex-end;
+}
+
+.home-section__4 {
+    background-image: url(../assets/home4.jpg);
+    justify-content: flex-start;
+}
+
+.home-section__5 {
+    background-image: url(../assets/home5.jpg);
+    justify-content: flex-end;
+}
+
+
+.home-section__text {
+    width: 30%;
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    line-height: 150%;
+}
+
+.home-section__text>h2 {
+    font-weight: bold;
+    font-size: 1.2rem;
+    width: 100%;
+}
+
+.home-section__text__1 {
+    background-color: rgba(0,0,0,.7);
+}
+
+.home-section__text__2 {
+    background-color: #600404
+}
+
+.home-section__text__3 {
+    background-color: #314B17
+}
+
+.home-section__text__4 {
+    background-color: #58431B
+}
+
+.home-section__text__5 {
+    background-color: rgba(0,0,0,.7);
+}
+
+/* FOOTER */
+
+footer {
+    display:flex;
+    flex-wrap: wrap;
+    background-color: #F0EEEE;
+    padding:1rem;
+    position: relative;
+    
+}
+
+.footer-top {
+    width: 100%;
+    display:flex;
+    justify-content: space-around;
+    margin-bottom: 1.5rem;
+}
+
+.footer-bottom {
+    width: 100%;
+    display:flex;
+    justify-content: space-between;
+}
+
+
+.footer-top h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.social-media {
+    position: absolute;
+    left: 90%;
+}
+
+.example_c {
+    color: #494949 !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #ffffff;
+    padding: 20px;
+    border: 4px solid #494949 !important;
+    display: inline-block;
+    transition: all 0.4s ease 0s;
+    }
+
+.example_c:hover {
+    color: #ffffff !important;
+    background: #f6b93b;
+    border-color: #f6b93b !important;
+    transition: all 0.4s ease 0s;
+    }
+
+
+
+/* PAGE CONTACT */
+.contact__main {
+    margin: 2rem;
+    display:flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.contact__title {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    /* width: 100%; */
+}
+
+.contact__action, .contact__info {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 900px;
+}
+
+.contact__vertical-line {
+    height: 300px;
+    border-left: 2px solid black ;
+}
+
+/* CONTACT ACTION */
+.contact__action__phone {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width:50%;
+    margin-right:2em;
+    padding: 0.8em;
+    border-radius: 30px;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+}
+
+.contact__action__phone__name {
+    margin-bottom: 0.5em;   
+}
+
+.contact__action__form {
+    width:50%;
+    display: flex;
+    flex-direction:column;
+    /* flex-wrap: wrap; */
+    padding: 2em;
+    margin-left: 2em;
+    background-color: #F0EEEE;
+}
+
+.contact__label {
+    width: 100%;
+    margin-top: 1.2rem;
+    margin-bottom:0.5rem;
+}
+
+.contact__form__button {
+    margin-top: 1rem;
+}
+
+/* CONTACT INFOS */
+.contact__info__store {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;   
+
+    margin-right: 2em;
+}
+
+.contact__info__store__item {
+    margin-bottom: 1.5em;
+    display: flex;
+    align-items: center;
+}
+
+.contact__info__store__icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.5rem;
+}
+
+
+.contact__info__store-name {
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
+}
+
+
+.contact__info__maps {
+    margin-left: 2em;
+}
+
+.contact__main>p>strong {
+    font-weight: bold;
+    font-style: italic;
+}
+
+
+/* CATALOGUE */
+
+.catalogue__sect1, .catalogue__sect2, .catalogue__sect3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.catalogue__sect__h2 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.catalogue__sect1__item {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.catalogue__sect2__carousel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* flex-wrap: wrap; */
+}
+
+.catalogue__sect2__carousel__slide-number {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.catalogue__sect2__carousel__images {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.catalogue__sect2__carousel__image--main {
+    width: 400px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.catalogue__sect2__carousel__image--small {
+    width:150px;
+    margin:1rem;
+    opacity: 0.5;
+    transition: opacity 0.6s ease;
+}
+.catalogue__sect2__carousel__image--small:hover {
+    opacity: 1;
+}
+
+
+
+/* MODAL OPEN GALLERY */
+
+/* The Modal (background) */
+.catalogue__modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  }
+
+/* Modal Content/Box */
+.catalogue__modal__content {
+    background-color: rgba(0,0,0,0.2);
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+
+/* Modal Header / Footer */
+.catalogue__modal__header, .catalogue__modal__footer {
+    padding: 2px 16px;
+    /* background-color: #5cb85c; */
+    color: white;
+}
+
+  /* The Close Button */
+.catalogue__modal__close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.catalogue__modal__close:hover,
+.catalogue__modal__close:focus {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+/* modal slide number (1/3 etc) */
+.catalogue__modal__slide-number {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+    left:50%
+}
+
+
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+  /* SLIDESHOW */
+
+  /* Hide the images by default */
+.catalogue__sect2__modal__slide {
+    display: none;
+    width:100%;
+    color: white;
+  }
+
+.catalogue__modal__img {
+    width:100%
+}
+
+/* Hide the images by default */
+.catalogue__sect3__modal__slide {
+    display: none;
+    width:100%;
+    color: white;
+}
+
+.pointer__prev, .pointer__next {
+    color: black;
+    cursor: pointer;
+    width: auto;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    padding: 16px;
+    user-select: none;
+    border-radius: 15%;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.pointer__prev:hover, .pointer__next:hover {
+    background-color: rgba(0,0,0,0.3);
+}
+
+/* Next & previous buttons */
+.catalogue__sect2__modal__prev, .catalogue__sect2__modal__next {
+    position: absolute;
+    top: 50%;
+    margin-top: -22px;
+    color: white;
+}
+
+.catalogue__sect2__modal__prev {
+    border-radius: 0 3px 3px 0;
+}
+/* Position the "next button" to the right */
+.catalogue__sect2__modal__next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.catalogue__sect2__modal__dots {
+    text-align:center;
+}
+  
+  /* The dots/bullets/indicators */
+.catalogue__sect2__modal__dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: rgb(138, 129, 129);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+  
+.active, .catalogue__sect2__modal__dot:hover {
+    background-color: white;
+}
+
+
+.catalogue__sect3__articles {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.catalogue__sect3__article {
+    width:25%;
+}

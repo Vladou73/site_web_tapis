@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage Tapis Persan Shéhérazade</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <!-- <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap-reboot.css"> -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="body-container">
+
+    <header>
+        <div class="header-top">
+            <section class="header-top__left">
+                <a class="logo" href="index.html">
+                    <h1>Tapis Shéhérazade</h1>
+                    <img class="logo__img" src="../assets/logo.png" alt="logo tapis Shéhérazade" />
+                </a>
+                
+                <div class="header-top__tagline-presta">
+                    <p>Vente, nettoyage et réparation de tapis persan sur RDV uniquement</p>
+                </div>
+            </section>
+            
+            <section class="header-top__right">
+                <div class="header-top__tagline-spe">
+                    <p>Votre spécialiste tapis persan depuis 1974</p>
+                </div>
+                
+                <a class="button button--red" href="#">Prendre RDV</a>
+    
+            </section>
+    
+        </div>
+        
+    </header>
+
+    <section class="header-sticky">
+        <nav class="header-nav__container">
+            <ul class="header-nav__sub-container">
+                <li><a class="header-nav__sub-container__item" href="#">HOME</a></li>
+                <li><a class="header-nav__sub-container__item" href="#">CATALOGUE</a></li>
+                <li><a class="header-nav__sub-container__item" href="#">NETTOYAGE RESTAURATION</a></li>
+                <li><a class="header-nav__sub-container__item" href="#">CONTACT</a></li>
+            </ul>
+        </nav>
+    
+        <section class="header-covid">
+            <p>En raison des normes sanitaires actuelles, votre galerie Shéhérazade vous reçoit uniquement sur RDV</p>
+        </section>
+    </section>
+
+    <main>
+        <section class="catalogue__sect1">
+
+            <h2 class="catalogue__sect1__item catalogue__sect__h2">Notre catalogue</h2>
+            <p class="catalogue__sect1__item">Nous avons plus de 1000 pièces en stock, de tous coloris, motifs et tailles.</p>
+            <p class="catalogue__sect1__item">Nos pièces s’adaptent à tous vos espaces de vie : salon, salle à manger, couloir, entrée, chambre à coucher.</p>
+            <p class="catalogue__sect1__item">
+                Nos tapis persans sont de fabrication artisanale, suivant une tradition millénaire. Plus de la moitié de nos pièces sont uniques.
+                Véritables oeuvres d’art, elles trouveront forcément une place dans votre intérieur.
+            </p>
+            <p class="catalogue__sect1__item">Visitez notre galerie virtuelle et prenez rendez-vous</p>
+    
+            <a class="button button--red catalogue__sect1__item" href="#">Prendre RDV</a>
+
+        </section>
+    
+        <section class="catalogue__sect2">
+
+            <h2 class="catalogue__sect__h2">Galerie virtuelle</h2>
+
+            <div class="catalogue__sect2__carousel">
+                
+                <p class="catalogue__sect2__carousel__slide-number"></p>
+                
+                <!-- Trigger/Open The Modal -->
+
+                <!-- Next and previous buttons -->
+                <div class="catalogue__sect2__carousel__images">
+                    <a class="pointer__prev catalogue__sect2__carousel__prev" id="catalogue__sect2__carousel__prev">&#10094;</a>
+
+                    <img class="catalogue__sect2__carousel__slide catalogue__sect2__carousel__image--small" src="../assets/home2.jpg" alt="">
+                    <img class="catalogue__sect2__carousel__slide catalogue__sect2__carousel__image--small" src="../assets/interieur1.jpg" alt="">
+                    <img class="catalogue__sect2__carousel__slide catalogue__sect2__carousel__image--small" src="../assets/home3.jpg" alt="">
+                    <img class="catalogue__sect2__carousel__slide catalogue__sect2__carousel__image--small" src="../assets/home4.jpg" alt="">
+                    <img class="catalogue__sect2__carousel__slide catalogue__sect2__carousel__image--small" src="../assets/home5.jpg" alt="">
+                    
+                    <a class="pointer__next catalogue__sect2__carousel__next" id="catalogue__sect2__carousel__next">&#10095;</a>
+
+                </div>
+                
+
+                <!-- The Modal -->
+                <div id="catalogue__sect2__modal" class="catalogue__modal">
+
+                    <!-- Modal content -->
+                    <div class="catalogue__modal__content">
+
+                            <!-- Slideshow container -->
+                            <div class="slideshow-container">
+
+                                <div class="catalogue__modal__header">
+                                    <span class="catalogue__modal__close">&times;</span>
+                                    <p class="catalogue__modal__slide-number" id="catalogue__sect2__modal__slide-number"></p>
+                                </div>
+
+                                <!-- Full-width images with headline & footer -->
+                                <div class="catalogue__sect2__modal__slide">
+                                    <h3>Tapis 1 tralala sur mariani tralala</h3>
+                                    <img class="catalogue__modal__img" src="../assets/home2.jpg" alt="">
+                                    <div class="catalogue__modal__footer">
+                                        <p>Dimensions : 250x150</p>
+                                        <p>Origine : Naïn</p>
+                                        <p>Durée de fabrication : 1996</p>
+                                        <p>Prix : 890 €</p>
+                                    </div>
+                                </div>
+
+                                <div class="catalogue__sect2__modal__slide">
+                                    <h3>Tapis 1 tralala sur mariani tralala</h3>
+                                    <img class="catalogue__modal__img" src="../assets/interieur1.jpg" alt="">
+                                    <div class="catalogue__modal__footer">
+                                        <p>Dimensions : 250x150</p>
+                                        <p>Origine : Naïn</p>
+                                        <p>Durée de fabrication : 1996</p>
+                                        <p>Prix : 890 €</p>
+                                    </div>
+                                </div>
+
+                                <div class="catalogue__sect2__modal__slide">
+                                    <h3>Tapis 2 tralala sur mariani tralala</h3>
+                                    <img class="catalogue__modal__img" src="../assets/home3.jpg" alt="">
+                                    <div class="catalogue__modal__footer">
+                                        <p>Dimensions : 450x300</p>
+                                        <p>Origine : Téhéran</p>
+                                        <p>Durée de fabrication : 2015</p>
+                                        <p>Prix : 5600 €</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="catalogue__sect2__modal__slide">
+                                    <h3>Tapis 3 tralala sur mariani tralala</h3>
+                                    <img class="catalogue__modal__img" src="../assets/home4.jpg" alt="">
+                                    <div class="catalogue__modal__footer">
+                                        <p>Dimensions : 150x100</p>
+                                        <p>Origine : Ispahan</p>
+                                        <p>Durée de fabrication : 8 ans</p>
+                                        <p>Prix : 12800 €</p>
+                                    </div>
+                                </div>
+                            
+                                <div class="catalogue__sect2__modal__slide">
+                                    <h3>Tapis 3 tralala sur mariani tralala</h3>
+                                    <img class="catalogue__modal__img" src="../assets/home5.jpg" alt="">
+                                    <div class="catalogue__modal__footer">
+                                        <p>Dimensions : 150x100</p>
+                                        <p>Origine : Ispahan</p>
+                                        <p>Durée de fabrication : 8 ans</p>
+                                        <p>Prix : 12800 €</p>
+                                    </div>
+                                </div>
+
+                                <!-- Next and previous buttons -->
+                                <a class="pointer__prev catalogue__sect2__modal__prev" id="catalogue__sect2__modal__prev">&#10094;</a>
+                                <a class="pointer__next catalogue__sect2__modal__next" id="catalogue__sect2__modal__next">&#10095;</a>
+
+
+                                <!-- The dots/circles -->
+                                <div class="catalogue__sect2__modal__dots">
+                                    <span class="catalogue__sect2__modal__dot" onclick="app.currentSlide(1)"></span>
+                                    <span class="catalogue__sect2__modal__dot" onclick="app.currentSlide(2)"></span>
+                                    <span class="catalogue__sect2__modal__dot" onclick="app.currentSlide(3)"></span>
+                                    <span class="catalogue__sect2__modal__dot" onclick="app.currentSlide(4)"></span>
+                                    <span class="catalogue__sect2__modal__dot" onclick="app.currentSlide(5)"></span>
+                                </div>
+
+                            </div>
+
+                    </div>
+                </div>
+                
+            </div>
+
+        </section>
+    
+        <section class="catalogue__sect3">
+            <h2 class="catalogue__sect__h2">Détails de pièces</h2>
+
+            <div class="catalogue__sect3__articles">
+
+                <img class="catalogue__sect3__article" src="../assets/catalogue/cat1.jpg" alt="">
+                <img class="catalogue__sect3__article" src="../assets/catalogue/cat2.jpg" alt="">
+                <img class="catalogue__sect3__article" src="../assets/catalogue/cat3.jpg" alt="">
+                <img class="catalogue__sect3__article" src="../assets/catalogue/cat4.jpg" alt="">
+                <img class="catalogue__sect3__article" src="../assets/catalogue/cat5.jpg" alt="">
+                <img class="catalogue__sect3__article" src="../assets/catalogue/cat6.jpg" alt="">
+                <img class="catalogue__sect3__article" src="../assets/catalogue/cat1.jpg" alt="">
+                <img class="catalogue__sect3__article" src="../assets/catalogue/cat2.jpg" alt="">
+                <img class="catalogue__sect3__article" src="../assets/catalogue/cat3.jpg" alt="">
+                <img class="catalogue__sect3__article" src="../assets/catalogue/cat4.jpg" alt="">
+                <img class="catalogue__sect3__article" src="../assets/catalogue/cat5.jpg" alt="">
+                <img class="catalogue__sect3__article" src="../assets/catalogue/cat6.jpg" alt="">
+                
+            </div>
+
+        <!-- The Modal for catalogue section-->
+        <div id="catalogue__sect3__modal" class="catalogue__modal">
+
+            <!-- Modal content -->
+            <div class="catalogue__modal__content">
+
+
+                <!-- Slideshow container -->
+                <div class="slideshow-container">
+
+                    <div class="catalogue__modal__header">
+                        <span class="catalogue__modal__close">&times;</span>
+                        <p class="catalogue__modal__slide-number" id="catalogue__sect3__modal__slide-number"></p>
+                    </div>
+
+
+                    <div class="catalogue__sect3__modal__slide">
+                        <h3>Tapis 2 tralala sur mariani tralala</h3>
+                        <img class="catalogue__modal__img" src="../assets/catalogue/cat1.jpg" alt="">
+                        <div class="catalogue__modal__footer">
+                            <p>Dimensions : 450x300</p>
+                            <p>Origine : Téhéran</p>
+                            <p>Durée de fabrication : 2015</p>
+                            <p>Prix : 5600 €</p>
+                        </div>
+                    </div>
+
+
+                    <div class="catalogue__sect3__modal__slide">
+                        <h3>Tapis 2 tralala sur mariani tralala</h3>
+                        <img class="catalogue__modal__img" src="../assets/catalogue/cat2.jpg" alt="">
+                        <div class="catalogue__modal__footer">
+                            <p>Dimensions : 450x300</p>
+                            <p>Origine : Téhéran</p>
+                            <p>Durée de fabrication : 2015</p>
+                            <p>Prix : 5600 €</p>
+                        </div>
+                    </div>
+
+
+                    <div class="catalogue__sect3__modal__slide">
+                        <h3>Tapis 2 tralala sur mariani tralala</h3>
+                        <img class="catalogue__modal__img" src="../assets/catalogue/cat3.jpg" alt="">
+                        <div class="catalogue__modal__footer">
+                            <p>Dimensions : 450x300</p>
+                            <p>Origine : Téhéran</p>
+                            <p>Durée de fabrication : 2015</p>
+                            <p>Prix : 5600 €</p>
+                        </div>
+                    </div>
+
+
+                    <div class="catalogue__sect3__modal__slide">
+                        <h3>Tapis 2 tralala sur mariani tralala</h3>
+                        <img class="catalogue__modal__img" src="../assets/catalogue/cat4.jpg" alt="">
+                        <div class="catalogue__modal__footer">
+                            <p>Dimensions : 450x300</p>
+                            <p>Origine : Téhéran</p>
+                            <p>Durée de fabrication : 2015</p>
+                            <p>Prix : 5600 €</p>
+                        </div>
+                    </div>
+
+
+                    <div class="catalogue__sect3__modal__slide">
+                        <h3>Tapis 2 tralala sur mariani tralala</h3>
+                        <img class="catalogue__modal__img" src="../assets/catalogue/cat5.jpg" alt="">
+                        <div class="catalogue__modal__footer">
+                            <p>Dimensions : 450x300</p>
+                            <p>Origine : Téhéran</p>
+                            <p>Durée de fabrication : 2015</p>
+                            <p>Prix : 5600 €</p>
+                        </div>
+                    </div>
+
+                    <!-- Next and previous buttons -->
+                    <a class="pointer__prev catalogue__sect2__modal__prev" id="catalogue__sect3__modal__prev">&#10094;</a>
+                    <a class="pointer__next catalogue__sect2__modal__next" id="catalogue__sect3__modal__next">&#10095;</a>
+                </div>
+            </div>
+        </div>
+
+        </section>
+    
+    </main>
+
+
+    <footer>
+        <section class="footer-top">
+            <div>
+                <h3>Prestations</h3>
+                <ul>
+                    <li><a href="#catalogue">Vente</a></li>
+                    <li><a href="#restauration">Nettoyage</a></li>
+                    <li><a href="#restauration">Restauration</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="#contact">Téléphone</a></li>
+                    <li><a href="#contact">Adresse</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Notre Société</h3>
+                <ul>
+                    <li><a href="#société shéhérazade">Qui sommes-nous</a></li>
+                    <li><a href="tapis persan"></a>Le tapis persan</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="footer-bottom">
+            <div>devis gratuit</div>
+            <div>enlèvement et livraison</div>
+            <div>garantie décennale</div>
+            <div>facilité de paiement</div>
+        </section>
+
+        <div class="social-media">
+            <a href="#facebook">facebook logo</a>
+            <a href="#facebook">youtube logo</a>
+        </div>
+    </footer>
+    </div>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>
+
+
+
