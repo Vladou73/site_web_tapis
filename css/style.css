@@ -137,41 +137,43 @@ body {
 }
 
 .home-section__1 {
-    background-image: url(../assets/interieur1.jpg);
+    background-image: url(../assets/home2.jpg);
     justify-content: flex-end;
 }
 
 .home-section__2 {
-    background-image: url(../assets/home2.jpg);
+    background-image: url(../assets/home3.jpg);
     justify-content: flex-start;
 }
 
 .home-section__3 {
-    background-image: url(../assets/home3.jpg);
+    background-image: url(../assets/home4.jpg);
     justify-content: flex-end;
 }
 
 .home-section__4 {
-    background-image: url(../assets/home4.jpg);
+    background-image: url(../assets/home2.jpg);
     justify-content: flex-start;
 }
 
 .home-section__5 {
-    background-image: url(../assets/home5.jpg);
+    background-image: url(../assets/interieur1.jpg);
     justify-content: flex-end;
 }
 
 
 .home-section__text {
     width: 30%;
-    padding: 1rem;
+    padding: 2rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 
-    color: white;
     line-height: 150%;
+    background-color: rgba(0,0,0,.6);
+    color: white;
+    text-shadow: 2px 2px 2px black
 }
 
 .home-section__text>h2 {
@@ -180,24 +182,39 @@ body {
     width: 100%;
 }
 
-.home-section__text__1 {
-    background-color: rgba(0,0,0,.7);
+/* TEXT ANIMATIONS : NEED TO ADD display:none AND ADD JS rules to start transition when scroll / viewport ok*/ 
+.home-section__text__move-left {
+    animation-name: moveLeft;
+    animation-duration: 3s;
+    animation-timing-function:  ease;
+    animation-delay: 1s;
+}
+.home-section__text__move-right {
+    animation-name: moveRight;
+    animation-duration: 3s;
+    animation-timing-function:  ease;
+    animation-delay: 1s;
 }
 
-.home-section__text__2 {
-    background-color: #600404
+@keyframes moveLeft {
+    0% {
+        opacity:0;
+        transform: translateX(200px);
+    }
+    100% {
+        opacity:1;
+        transform: translateX(0);
+    }
 }
-
-.home-section__text__3 {
-    background-color: #314B17
-}
-
-.home-section__text__4 {
-    background-color: #58431B
-}
-
-.home-section__text__5 {
-    background-color: rgba(0,0,0,.7);
+@keyframes moveRight {
+    0% {
+        opacity:0;
+        transform: translateX(-200px);
+    }
+    100% {
+        opacity:1;
+        transform: translateX(0);
+    }
 }
 
 /* FOOTER */
