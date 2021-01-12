@@ -54,9 +54,10 @@ body {
 
 .header-top__tagline-spe {
     width: 100%;
-    font-size: 0.9rem;
+    /* font-size: 0.9rem; */
     display:flex;
     justify-content: center;
+    font-weight: bold;
 }
 
 
