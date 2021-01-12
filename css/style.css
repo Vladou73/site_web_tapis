@@ -17,7 +17,8 @@ body {
 
 .header-top {
     display:flex;
-    background-color: #F0EEEE;
+    background-color:#EEE2DC;
+    /* #F0EEEE; */
     padding:1rem;
 }
 
@@ -66,27 +67,62 @@ body {
 .button {
     padding:0.6rem;
     font-weight: bold;
+    text-shadow: none;
+
+    color: #494949 !important;
+    text-decoration: none;
+    background: #ffffff;
+    border: 4px solid #494949 !important;
+    display: inline-block;
+    transition: all 0.4s ease 0s;
 }
 
-.button--red {
+/* .button--red {
     background-color: #A10B0B;
     color: white;
+} */
+
+.button--red:hover {
+    background-color: #A10B0B;
+    color: #ffffff !important;
+    border-color: #A10B0B !important;
+    transition: all 0.4s ease 0s;
 }
 
-.button--dark-red {
+.button--dark-red:hover {
     background-color: #340404;
-    color: white;
+    color: #ffffff !important;
+    border-color: #340404 !important;
+    transition: all 0.4s ease 0s;
 }
 
-.button--grey {
+.button--grey:hover {
     background-color: #A79E9E;
-    color: black;
+    color: black !important;
+    border-color: #A79E9E !important;
+    transition: all 0.4s ease 0s;
 }
 
-.button--gold {
+.button--gold:hover {
     background-color: #C9C68B;
-    color: black;
+    color: black !important;
+    border-color: #C9C68B !important;
+    transition: all 0.4s ease 0s;
 }
+
+.button--header {
+    color: #ffffff !important;
+    background-color: #A10B0B;
+    border-color: #A10B0B !important;
+}
+.button--header:hover {
+    background-color: #494949;
+    color: #A10B0B !important;
+    background: #ffffff;
+    border-color: #A10B0B !important;
+}
+
+
 
 /* NAVIGATION */
 
@@ -100,7 +136,9 @@ body {
     display: flex;
     justify-content: space-around;
     padding: 0.8rem;
-    background-color: black;
+    background-color:black; 
+    /* #5D5C61; */
+    /* black */
 }
 
 .header-nav__sub-container__item {
@@ -222,7 +260,8 @@ body {
 footer {
     display:flex;
     flex-wrap: wrap;
-    background-color: #F0EEEE;
+    background-color: #EEE2DC; 
+    /* #F0EEEE; */
     padding:1rem;
     position: relative;
     
@@ -252,23 +291,6 @@ footer {
     left: 90%;
 }
 
-.example_c {
-    color: #494949 !important;
-    text-transform: uppercase;
-    text-decoration: none;
-    background: #ffffff;
-    padding: 20px;
-    border: 4px solid #494949 !important;
-    display: inline-block;
-    transition: all 0.4s ease 0s;
-    }
-
-.example_c:hover {
-    color: #ffffff !important;
-    background: #f6b93b;
-    border-color: #f6b93b !important;
-    transition: all 0.4s ease 0s;
-    }
 
 
 
