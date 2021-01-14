@@ -1,0 +1,46 @@
+[
+    {
+        "title": "tapis tralala 1",
+        "file_name":"home2.jpg",
+        "page":"catalogue",
+        "section":2,
+        "order":1,
+        "width": 250,
+        "length": 150,
+        "origin":"Naïn",
+        "manufacturing_duration":2
+    },
+    {
+        "title": "tapis tralala 2",
+        "file_name":"home3.jpg",
+        "page":"catalogue",
+        "section":2,
+        "order":2,
+        "width": 250,
+        "length": 150,
+        "origin":"Naïn",
+        "manufacturing_duration":1
+    },
+    {
+        "title": "tapis tralala 3",
+        "file_name":"home4.jpg",
+        "page":"catalogue",
+        "section":2,
+        "order":3,
+        "width": 300,
+        "length": 350,
+        "origin":"Teheran",
+        "manufacturing_duration":4
+    },
+    {
+        "title": "tapis tralala 4",
+        "file_name":"home5.jpg",
+        "page":"catalogue",
+        "section":2,
+        "order":4,
+        "width": 250,
+        "length": 50,
+        "origin":"Naïn",
+        "manufacturing_duration":5
+    }
+]

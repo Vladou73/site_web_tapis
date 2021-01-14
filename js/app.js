@@ -3,8 +3,10 @@ const app = {
   articleIndex : 1
 }
 
-app.init =  function() {
+app.init =  async function() {
   console.log('script is initiated');
+
+  await app.loadJsonData();
 
   // Get next/previous controls
   app.btn_prev_carousel = document.getElementById("catalogue__sect2__carousel__prev"),
@@ -182,7 +184,28 @@ app.switchSlides = (n) => {
   })
 }
 
+app.loadJsonData = async function(){
+  try {
+    const response = await fetch('../data/catalogue.json');
 
+    if (response.status !== 200) {
+      let error = await response.json();
+      throw error;
+    } else {
+      const data = await response.json();
+      app.data = data;
+      console.log(app.data);
+      // return data;
+    }
+  } catch(error) {
+    alert('impossible de charger les images');
+    console.error(error);
+  }
+}
 
+app.addTemplatesToDom = function() {
+  let templateCarouselImg = document.getElementById('template__carrousel-slide');
+  let newCarouselImg = document.importNode(templateCarouselImg.content, true);
+}
 
 document.addEventListener('DOMContentLoaded', app.init);
