@@ -91,20 +91,10 @@
                 <!-- Next and previous buttons -->
                 <div class="catalogue__sect2__carousel__images">
                     <a class="pointer__prev catalogue__sect2__carousel__prev" id="catalogue__sect2__carousel__prev">&#10094;</a>
-
-                    <img class="catalogue__sect2__carousel__slide catalogue__sect2__carousel__image--small" src="../assets/home2.jpg" alt="">
-                    <img class="catalogue__sect2__carousel__slide catalogue__sect2__carousel__image--small" src="../assets/interieur1.jpg" alt="">
-                    <img class="catalogue__sect2__carousel__slide catalogue__sect2__carousel__image--small" src="../assets/home3.jpg" alt="">
-                    <img class="catalogue__sect2__carousel__slide catalogue__sect2__carousel__image--small" src="../assets/home4.jpg" alt="">
-                    <img class="catalogue__sect2__carousel__slide catalogue__sect2__carousel__image--small" src="../assets/home5.jpg" alt="">
-                    
+                    <!-- HERE INSERT TEMPLATE CAROUSEL IMG -->
                     <a class="pointer__next catalogue__sect2__carousel__next" id="catalogue__sect2__carousel__next">&#10095;</a>
-
                 </div>
                 
-
-
-
                 <!-- The Modal -->
                 <div id="catalogue__sect2__modal" class="catalogue__modal">
 
@@ -119,61 +109,7 @@
                                     <p class="catalogue__modal__slide-number" id="catalogue__sect2__modal__slide-number"></p>
                                 </div>
 
-                                <!-- Full-width images with headline & footer -->
-                                <div class="catalogue__sect2__modal__slide">
-                                    <h3>Tapis 1 tralala sur mariani tralala</h3>
-                                    <img class="catalogue__modal__img" src="../assets/home2.jpg" alt="">
-                                    <div class="catalogue__modal__footer">
-                                        <p>Dimensions : 250x150</p>
-                                        <p>Origine : Naïn</p>
-                                        <p>Durée de fabrication : 1996</p>
-                                        <p>Prix : 890 €</p>
-                                    </div>
-                                </div>
-
-                                <div class="catalogue__sect2__modal__slide">
-                                    <h3>Tapis 1 tralala sur mariani tralala</h3>
-                                    <img class="catalogue__modal__img" src="../assets/interieur1.jpg" alt="">
-                                    <div class="catalogue__modal__footer">
-                                        <p>Dimensions : 250x150</p>
-                                        <p>Origine : Naïn</p>
-                                        <p>Durée de fabrication : 1996</p>
-                                        <p>Prix : 890 €</p>
-                                    </div>
-                                </div>
-
-                                <div class="catalogue__sect2__modal__slide">
-                                    <h3>Tapis 2 tralala sur mariani tralala</h3>
-                                    <img class="catalogue__modal__img" src="../assets/home3.jpg" alt="">
-                                    <div class="catalogue__modal__footer">
-                                        <p>Dimensions : 450x300</p>
-                                        <p>Origine : Téhéran</p>
-                                        <p>Durée de fabrication : 2015</p>
-                                        <p>Prix : 5600 €</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="catalogue__sect2__modal__slide">
-                                    <h3>Tapis 3 tralala sur mariani tralala</h3>
-                                    <img class="catalogue__modal__img" src="../assets/home4.jpg" alt="">
-                                    <div class="catalogue__modal__footer">
-                                        <p>Dimensions : 150x100</p>
-                                        <p>Origine : Ispahan</p>
-                                        <p>Durée de fabrication : 8 ans</p>
-                                        <p>Prix : 12800 €</p>
-                                    </div>
-                                </div>
-                            
-                                <div class="catalogue__sect2__modal__slide">
-                                    <h3>Tapis 3 tralala sur mariani tralala</h3>
-                                    <img class="catalogue__modal__img" src="../assets/home5.jpg" alt="">
-                                    <div class="catalogue__modal__footer">
-                                        <p>Dimensions : 150x100</p>
-                                        <p>Origine : Ispahan</p>
-                                        <p>Durée de fabrication : 8 ans</p>
-                                        <p>Prix : 12800 €</p>
-                                    </div>
-                                </div>
+                                <!-- HERE INSERT TEMPLATE Full-width images with headline & footer -->
 
                                 <!-- Next and previous buttons -->
                                 <a class="pointer__prev catalogue__sect2__modal__prev" id="catalogue__sect2__modal__prev">&#10094;</a>
@@ -352,6 +288,20 @@
     <template id="template__carrousel-slide">
         <img class="catalogue__sect2__carousel__slide catalogue__sect2__carousel__image--small" src="../assets/" alt="">
     </template>
+
+    <template id="template__carrousel-slide__modal">
+        <figure class="catalogue__sect2__modal__slide">
+            <h3></h3>
+            <img class="catalogue__modal__img" src="../assets/" alt="">
+            <figcaption class="catalogue__modal__footer">
+                <p>Dimensions</p>
+                <p>Origine</p>
+                <p>Durée de fabrication</p>
+            </figcaption>
+        </figure>
+    </template>
+
+
 
 
 </body>

@@ -6,12 +6,14 @@ const app = {
 app.init =  async function() {
   console.log('script is initiated');
 
+  //get carpet data from JSON => needed to load images
   await app.loadJsonData();
+  // Process json data & template elements to add img elements to DOM
+  app.createCarouselSlides();
 
   // Get next/previous controls
   app.btn_prev_carousel = document.getElementById("catalogue__sect2__carousel__prev"),
   app.btn_next_carousel = document.getElementById("catalogue__sect2__carousel__next"),
-  
 
   app.eventListenersInitialization();
   app.switchSlides(app.slideIndex);
@@ -192,10 +194,7 @@ app.loadJsonData = async function(){
       let error = await response.json();
       throw error;
     } else {
-      const data = await response.json();
-      app.data = data;
-      console.log(app.data);
-      // return data;
+      app.dataCatalogue = await response.json();
     }
   } catch(error) {
     alert('impossible de charger les images');
@@ -203,9 +202,57 @@ app.loadJsonData = async function(){
   }
 }
 
-app.addTemplatesToDom = function() {
-  let templateCarouselImg = document.getElementById('template__carrousel-slide');
-  let newCarouselImg = document.importNode(templateCarouselImg.content, true);
+app.createCarouselSlides = function() {
+  const dataCarousel = app.dataCatalogue.filter(elem => elem.section === 2);
+  
+  dataCarousel.sort((a,b)=>{
+    if (a.order < b.order) {
+      return -1;
+    } else {return 1};
+  })
+  for (let elem of dataCarousel) {
+    app.addCarouselSlideToDom(elem);
+    app.addCarouselModalSlideToDom(elem);
+  }
 }
+
+app.addCarouselSlideToDom = function(elem) {
+  //create a clone of the template
+  const newCarouselSlide = document.importNode(document.getElementById('template__carrousel-slide').content, true);
+  const newImg = newCarouselSlide.querySelector('img');
+
+  //set image attributes with json data
+  newImg.setAttribute('src', "../assets/" + elem.file_name);
+  newImg.setAttribute('alt', "../assets/" + elem.title);
+
+  //insert newImg in DOM
+  const parent = document.querySelector('.catalogue__sect2__carousel__images');
+  const nextElem = document.querySelector('#catalogue__sect2__carousel__next');
+  parent.insertBefore(newImg, nextElem);
+}
+
+app.addCarouselModalSlideToDom = function(elem) {
+  //create a clone of the template
+  const newModalSlide = document.importNode(document.getElementById('template__carrousel-slide__modal').content, true);
+  const newSlide = newModalSlide.querySelector('.catalogue__sect2__modal__slide');
+
+  //set image attributes with json data
+  const newImg = newSlide.querySelector('img');
+  newImg.setAttribute('src', "../assets/" + elem.file_name);
+  newImg.setAttribute('alt', "../assets/" + elem.title);
+
+  //set title and footer infos
+  newSlide.querySelector('h3').innerHTML = elem.title;
+  newSlide.querySelector('figcaption').innerHTML = `
+    <p>Dimensions : ${elem.width} x ${elem.length}</p>
+    <p>Origine : ${elem.origin}</p>
+    <p>Durée de fabrication : ${elem.manufacturing_duration} ${(elem.manufacturing_duration>1)? "ans" : "an"}</p>`
+
+    //insert newSlide in DOM
+  const parent = document.querySelector('#catalogue__sect2__modal .slideshow-container');
+  const nextElem = document.querySelector('#catalogue__sect2__modal__prev');
+  parent.insertBefore(newSlide, nextElem);
+}
+
 
 document.addEventListener('DOMContentLoaded', app.init);
