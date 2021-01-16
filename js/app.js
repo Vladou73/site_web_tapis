@@ -1,8 +1,11 @@
 const app = {
+  // set first index for carousel slides
   slideIndex : 2,
+  // set first index for catalogue slides
   articleIndex : 1
 }
 
+//script initialization
 app.init =  async function() {
   console.log('script is initiated');
 
@@ -10,15 +13,138 @@ app.init =  async function() {
   await app.loadJsonData();
   // Process json data & template elements to add img elements to DOM
   app.createCarouselSlides();
+  app.createCatalogueSlides();
 
-  // Get next/previous controls
+  // Get next/previous controls for carousel
   app.btn_prev_carousel = document.getElementById("catalogue__sect2__carousel__prev"),
   app.btn_next_carousel = document.getElementById("catalogue__sect2__carousel__next"),
 
+  //initialize eventListeners
   app.eventListenersInitialization();
-  app.switchSlides(app.slideIndex);
+  //make sure to start on right slide index of the carousel
+  app.switchCarouselSlides(app.slideIndex);
+}
+//Calls carpet data in json file
+app.loadJsonData = async function(){
+  try {
+    const response = await fetch('../data/catalogue.json');
+
+    if (response.status !== 200) {
+      let error = await response.json();
+      throw error;
+    } else {
+      app.dataCatalogue = await response.json();
+    }
+  } catch(error) {
+    alert('impossible de charger les images');
+    console.error(error);
+  }
+}
+//use template tag, images & json data to create html elements for the carousel
+app.createCarouselSlides = function() {
+  const dataCarousel = app.dataCatalogue.filter(elem => elem.section === 2);
+  
+  dataCarousel.sort((a,b)=>{
+    if (a.order < b.order) {
+      return -1;
+    } else {return 1};
+  })
+  for (let elem of dataCarousel) {
+    app.addCarouselSlideToDom(elem);
+    app.addCarouselModalSlideToDom(elem);
+  }
+}
+//use template tag, images & json data to create html elements for the catalogue
+app.createCatalogueSlides = function() {
+  const data = app.dataCatalogue.filter(elem => elem.section === 3);
+  data.sort((a,b)=>{
+    if (a.order < b.order) {
+      return -1;
+    } else {return 1};
+  })
+  for (let elem of data) {
+    app.addCatalogueArticleToDom(elem);
+    app.addCatalogueModalSlideToDom(elem);
+  }
 }
 
+app.addCatalogueArticleToDom = function(elem) {
+  //create a clone of the template
+  const newCataloguelArticle = document.importNode(document.getElementById('template__catalogue-article').content, true);
+  const newImg = newCataloguelArticle.querySelector('img');
+
+  //set image attributes with json data
+  newImg.setAttribute('src', "../assets/catalogue/" + elem.file_name);
+  newImg.setAttribute('alt',elem.title);
+
+  //insert newImg in DOM
+  const parent = document.querySelector('.catalogue__sect3__articles');
+  parent.appendChild(newImg);
+}
+
+app.addCarouselSlideToDom = function(elem) {
+  //create a clone of the template
+  const newCarouselSlide = document.importNode(document.getElementById('template__carrousel-slide').content, true);
+  const newImg = newCarouselSlide.querySelector('img');
+
+  //set image attributes with json data
+  newImg.setAttribute('src', "../assets/" + elem.file_name);
+  newImg.setAttribute('alt',elem.title);
+
+  //insert newImg in DOM
+  const parent = document.querySelector('.catalogue__sect2__carousel__images');
+  const nextElem = document.querySelector('#catalogue__sect2__carousel__next');
+  parent.insertBefore(newImg, nextElem);
+}
+
+app.addCatalogueModalSlideToDom = function(elem) {
+  //create a clone of the template
+  const newModalSlide = document.importNode(document.getElementById('template__modal-slide').content, true);
+  const newSlide = newModalSlide.querySelector('figure');
+  //set class attribute
+  newSlide.classList.add('catalogue__sect3__modal__slide')
+  //set image attributes with json data
+  const newImg = newSlide.querySelector('img');
+  newImg.setAttribute('src', "../assets/catalogue/" + elem.file_name);
+  newImg.setAttribute('alt', elem.title);
+
+  //set title and footer infos
+  newSlide.querySelector('h3').innerHTML = elem.title;
+  newSlide.querySelector('figcaption').innerHTML = `
+    <p>Dimensions : ${elem.width} x ${elem.length}</p>
+    <p>Origine : ${elem.origin}</p>
+    <p>Durée de fabrication : ${elem.manufacturing_duration} ${(elem.manufacturing_duration>1)? "ans" : "an"}</p>`
+
+    //insert newSlide in DOM
+  const parent = document.querySelector('#catalogue__sect3__modal .slideshow-container');
+  const nextElem = document.querySelector('#catalogue__sect3__modal__prev');
+  parent.insertBefore(newSlide, nextElem);
+}
+
+app.addCarouselModalSlideToDom = function(elem) {
+  //create a clone of the template
+  const newModalSlide = document.importNode(document.getElementById('template__modal-slide').content, true);
+  const newSlide = newModalSlide.querySelector('figure');
+  //set class attribute
+  newSlide.classList.add('catalogue__sect2__modal__slide')
+  //set image attributes with json data
+  const newImg = newSlide.querySelector('img');
+  newImg.setAttribute('src', "../assets/" + elem.file_name);
+  newImg.setAttribute('alt', elem.title);
+
+  //set title and footer infos
+  newSlide.querySelector('h3').innerHTML = elem.title;
+  newSlide.querySelector('figcaption').innerHTML = `
+    <p>Dimensions : ${elem.width} x ${elem.length}</p>
+    <p>Origine : ${elem.origin}</p>
+    <p>Durée de fabrication : ${elem.manufacturing_duration} ${(elem.manufacturing_duration>1)? "ans" : "an"}</p>`
+
+    //insert newSlide in DOM
+  const parent = document.querySelector('#catalogue__sect2__modal .slideshow-container');
+  const nextElem = document.querySelector('#catalogue__sect2__modal__prev');
+  parent.insertBefore(newSlide, nextElem);
+}
+//put all eventListeners on catalogue page elements
 app.eventListenersInitialization = function() {
   // MODALS
   const modals = document.getElementsByClassName("catalogue__modal")
@@ -45,7 +171,7 @@ app.eventListenersInitialization = function() {
 
   // SLIDESHOW within the biggest modal (modal from catalogue section 2) 
   // When the user clicks on the prev/next buttons, changes slide
-    // Get next/previous controls
+    // Get next/previous controls & add eventListeners
   const btn_prev_modal = document.getElementById("catalogue__sect2__modal__prev")
   const btn_next_modal = document.getElementById("catalogue__sect2__modal__next")
   const btn_prev_catalogue = document.getElementById("catalogue__sect3__modal__prev")
@@ -74,21 +200,19 @@ app.eventListenersInitialization = function() {
  
   // When the user clicks on the prev/next buttons of carousel, changes slide
   app.btn_prev_carousel.addEventListener('click',() => {
-    app.switchSlides(app.slideIndex -= 1);
+    app.switchCarouselSlides(app.slideIndex -= 1);
   })
   app.btn_next_carousel.addEventListener('click',() => {
-    app.switchSlides(app.slideIndex += 1);
+    app.switchCarouselSlides(app.slideIndex += 1);
   })
 }
-
 // Thumbnail dots/image controls of the modal
 app.currentSlide = function(n) {
   app.showSlidesCarouselModal(app.slideIndex = n);
 }
-
 // function used for the modal within the carousel
 app.showSlidesCarouselModal = function(n) {
-    //Cas où on click sur un article : on veut que articleIndex corresponde à l'index de l'article
+  //Cas où on click sur une image du catalogue : on veut que slideIndex corresponde à l'index de l'image
   if (event.target.className === 'catalogue__sect2__carousel__slide catalogue__sect2__carousel__image--main') {
     app.slideIndex = n;
   }
@@ -99,6 +223,7 @@ app.showSlidesCarouselModal = function(n) {
   const dots = document.getElementsByClassName("catalogue__sect2__modal__dot");
   const slideNumber = document.getElementById("catalogue__sect2__modal__slide-number")
 
+  //gestion des cas où on est en dessous de la limite de la 1ere image ou au delà de la dernière image
   if (n > slides.length) {app.slideIndex = 1}
   if (n < 1) {app.slideIndex = slides.length}
   
@@ -114,9 +239,10 @@ app.showSlidesCarouselModal = function(n) {
   slides[app.slideIndex-1].style.display = "block";
   dots[app.slideIndex-1].className += " active";
   
-  app.switchSlides(app.slideIndex);
+  // calls the function to switch slides of the carousel as it is in the modal
+  app.switchCarouselSlides(app.slideIndex);
 }
-
+//function used for the modal within the catalogue
 app.showSlidesCatalogueModal = function(n, classNameSlides, idSlideNumber) {
   //Cas où on click sur un article : on veut que articleIndex corresponde à l'index de l'article
   if (event.target.className === 'catalogue__sect3__article') {
@@ -140,8 +266,7 @@ app.showSlidesCatalogueModal = function(n, classNameSlides, idSlideNumber) {
   modalArticles.style.display = "block"
   
 }
-
-// function used for the carousel of images in situ
+// function used for the carousel of images in situ (big image, small images transparent, swith images...)
 app.switchSlides = (n) => {
   const slides = document.getElementsByClassName("catalogue__sect2__carousel__slide");
   const modal = document.getElementById("catalogue__sect2__modal");
@@ -185,74 +310,5 @@ app.switchSlides = (n) => {
     }
   })
 }
-
-app.loadJsonData = async function(){
-  try {
-    const response = await fetch('../data/catalogue.json');
-
-    if (response.status !== 200) {
-      let error = await response.json();
-      throw error;
-    } else {
-      app.dataCatalogue = await response.json();
-    }
-  } catch(error) {
-    alert('impossible de charger les images');
-    console.error(error);
-  }
-}
-
-app.createCarouselSlides = function() {
-  const dataCarousel = app.dataCatalogue.filter(elem => elem.section === 2);
-  
-  dataCarousel.sort((a,b)=>{
-    if (a.order < b.order) {
-      return -1;
-    } else {return 1};
-  })
-  for (let elem of dataCarousel) {
-    app.addCarouselSlideToDom(elem);
-    app.addCarouselModalSlideToDom(elem);
-  }
-}
-
-app.addCarouselSlideToDom = function(elem) {
-  //create a clone of the template
-  const newCarouselSlide = document.importNode(document.getElementById('template__carrousel-slide').content, true);
-  const newImg = newCarouselSlide.querySelector('img');
-
-  //set image attributes with json data
-  newImg.setAttribute('src', "../assets/" + elem.file_name);
-  newImg.setAttribute('alt', "../assets/" + elem.title);
-
-  //insert newImg in DOM
-  const parent = document.querySelector('.catalogue__sect2__carousel__images');
-  const nextElem = document.querySelector('#catalogue__sect2__carousel__next');
-  parent.insertBefore(newImg, nextElem);
-}
-
-app.addCarouselModalSlideToDom = function(elem) {
-  //create a clone of the template
-  const newModalSlide = document.importNode(document.getElementById('template__carrousel-slide__modal').content, true);
-  const newSlide = newModalSlide.querySelector('.catalogue__sect2__modal__slide');
-
-  //set image attributes with json data
-  const newImg = newSlide.querySelector('img');
-  newImg.setAttribute('src', "../assets/" + elem.file_name);
-  newImg.setAttribute('alt', "../assets/" + elem.title);
-
-  //set title and footer infos
-  newSlide.querySelector('h3').innerHTML = elem.title;
-  newSlide.querySelector('figcaption').innerHTML = `
-    <p>Dimensions : ${elem.width} x ${elem.length}</p>
-    <p>Origine : ${elem.origin}</p>
-    <p>Durée de fabrication : ${elem.manufacturing_duration} ${(elem.manufacturing_duration>1)? "ans" : "an"}</p>`
-
-    //insert newSlide in DOM
-  const parent = document.querySelector('#catalogue__sect2__modal .slideshow-container');
-  const nextElem = document.querySelector('#catalogue__sect2__modal__prev');
-  parent.insertBefore(newSlide, nextElem);
-}
-
 
 document.addEventListener('DOMContentLoaded', app.init);

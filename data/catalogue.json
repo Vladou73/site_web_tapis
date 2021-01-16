@@ -42,5 +42,71 @@
         "length": 50,
         "origin":"Naïn",
         "manufacturing_duration":5
+    },
+    {
+        "title": "tapis tralala 4",
+        "file_name":"cat1.jpg",
+        "page":"catalogue",
+        "section":3,
+        "order":1,
+        "width": 250,
+        "length": 50,
+        "origin":"Naïn",
+        "manufacturing_duration":5
+    },
+    {
+        "title": "tapis tralala 4",
+        "file_name":"cat2.jpg",
+        "page":"catalogue",
+        "section":3,
+        "order":2,
+        "width": 250,
+        "length": 50,
+        "origin":"Naïn",
+        "manufacturing_duration":5
+    },
+    {
+        "title": "tapis tralala 4",
+        "file_name":"cat3.jpg",
+        "page":"catalogue",
+        "section":3,
+        "order":3,
+        "width": 250,
+        "length": 50,
+        "origin":"Naïn",
+        "manufacturing_duration":5
+    },
+    {
+        "title": "tapis tralala 4",
+        "file_name":"cat4.jpg",
+        "page":"catalogue",
+        "section":3,
+        "order":4,
+        "width": 250,
+        "length": 50,
+        "origin":"Naïn",
+        "manufacturing_duration":5
+    },
+    {
+        "title": "tapis tralala 4",
+        "file_name":"cat5.jpg",
+        "page":"catalogue",
+        "section":3,
+        "order":5,
+        "width": 250,
+        "length": 50,
+        "origin":"Naïn",
+        "manufacturing_duration":5
+    },
+    {
+        "title": "tapis tralala 4",
+        "file_name":"cat6.jpg",
+        "page":"catalogue",
+        "section":3,
+        "order":6,
+        "width": 250,
+        "length": 50,
+        "origin":"Naïn",
+        "manufacturing_duration":5
     }
 ]
