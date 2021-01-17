@@ -44,15 +44,18 @@ app.loadJsonData = async function(){
 app.createCarouselSlides = function() {
   const dataCarousel = app.dataCatalogue.filter(elem => elem.section === 2);
   
+  //reorder carpets in the order wanted
   dataCarousel.sort((a,b)=>{
     if (a.order < b.order) {
       return -1;
     } else {return 1};
   })
-  for (let elem of dataCarousel) {
+  //iterate over carpet datas to fetch images & create DOM elements
+  dataCarousel.forEach((elem, index) => {
     app.addCarouselSlideToDom(elem);
     app.addCarouselModalSlideToDom(elem);
-  }
+    app.addCarouselModalDotToDom(index);  
+  });
 }
 //use template tag, images & json data to create html elements for the catalogue
 app.createCatalogueSlides = function() {
@@ -144,11 +147,22 @@ app.addCarouselModalSlideToDom = function(elem) {
   const nextElem = document.querySelector('#catalogue__sect2__modal__prev');
   parent.insertBefore(newSlide, nextElem);
 }
+
+app.addCarouselModalDotToDom = function(index){
+  //create a clone of the template
+  const templateCopy = document.importNode(document.getElementById('template__modal-dot').content, true);
+  const newDot = templateCopy.querySelector('span');
+  //Set attribute to dot
+  newDot.setAttribute('onclick', `app.currentSlide(${index+1})`);
+  //insert newDot in DOM
+  document.querySelector('.catalogue__sect2__modal__dots').appendChild(newDot);
+}
+
 //put all eventListeners on catalogue page elements
 app.eventListenersInitialization = function() {
   // MODALS
   const modals = document.getElementsByClassName("catalogue__modal")
-
+console.log(modals)
   // Get modals elements  : modal div, opening button & closing buttons 
   const closeBtns = document.getElementsByClassName("catalogue__modal__close");
   for (let closing of closeBtns) {
@@ -160,11 +174,15 @@ app.eventListenersInitialization = function() {
     })
   }
 
+
   // When the user clicks anywhere outside of a modal, close it
+  const modalsContent = document.getElementsByClassName("catalogue__modal__content")
   window.addEventListener("click", (event)=>{
     for (let modal of modals) { 
-      if (event.target === modal) {
-        modal.style.display = "none";
+      for (let modalContent of modalsContent) {
+        if (event.target === modalContent) {
+          modal.style.display = "none";
+        }
       }
     }
   })
@@ -267,7 +285,7 @@ app.showSlidesCatalogueModal = function(n, classNameSlides, idSlideNumber) {
   
 }
 // function used for the carousel of images in situ (big image, small images transparent, swith images...)
-app.switchSlides = (n) => {
+app.switchCarouselSlides = (n) => {
   const slides = document.getElementsByClassName("catalogue__sect2__carousel__slide");
   const modal = document.getElementById("catalogue__sect2__modal");
   let slideIndexPrev, slideIndexNext;

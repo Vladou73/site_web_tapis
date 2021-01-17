@@ -105,7 +105,7 @@
                             <div class="slideshow-container">
 
                                 <div class="catalogue__modal__header">
-                                    <span class="catalogue__modal__close">&times;</span>
+                                    <span class="catalogue__modal__close">&#10006;</span>
                                     <p class="catalogue__modal__slide-number" id="catalogue__sect2__modal__slide-number"></p>
                                 </div>
 
@@ -118,11 +118,7 @@
 
                                 <!-- The dots/circles -->
                                 <div class="catalogue__sect2__modal__dots">
-                                    <span class="catalogue__sect2__modal__dot" onclick="app.currentSlide(1)"></span>
-                                    <span class="catalogue__sect2__modal__dot" onclick="app.currentSlide(2)"></span>
-                                    <span class="catalogue__sect2__modal__dot" onclick="app.currentSlide(3)"></span>
-                                    <span class="catalogue__sect2__modal__dot" onclick="app.currentSlide(4)"></span>
-                                    <span class="catalogue__sect2__modal__dot" onclick="app.currentSlide(5)"></span>
+                                    <!-- INSERT TEMPLATE DOTS HERE -->
                                 </div>
 
                             </div>
@@ -149,7 +145,7 @@
                 <div class="slideshow-container">
 
                     <div class="catalogue__modal__header">
-                        <span class="catalogue__modal__close">&times;</span>
+                        <span class="catalogue__modal__close">&#10006;</span>
                         <p class="catalogue__modal__slide-number" id="catalogue__sect3__modal__slide-number"></p>
                     </div>
 
@@ -225,6 +221,10 @@
                 <p>Durée de fabrication</p>
             </figcaption>
         </figure>
+    </template>
+
+    <template id="template__modal-dot">
+        <span class="catalogue__sect2__modal__dot" onclick=""></span>
     </template>
 
     <template id="template__catalogue-article">
