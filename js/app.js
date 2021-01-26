@@ -23,6 +23,7 @@ app.init =  async function() {
   app.eventListenersInitialization();
   //make sure to start on right slide index of the carousel
   app.switchCarouselSlides(app.slideIndex);
+
 }
 //Calls carpet data in json file
 app.loadJsonData = async function(){
@@ -327,6 +328,9 @@ app.switchCarouselSlides = (n) => {
       slide.style.display = "block";
     }
   })
+  // 3) Change n° of slide Number
+  console.log(document.querySelector('.catalogue__sect2__carousel__slide-number'))
+  document.querySelector('.catalogue__sect2__carousel__slide-number').textContent = `${app.slideIndex}/${slides.length}`
 }
 
 document.addEventListener('DOMContentLoaded', app.init);
