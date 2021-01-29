@@ -242,14 +242,14 @@ body {
     animation-name: moveLeft;
     animation-duration: 3s;
     animation-timing-function:  ease;
-    animation-delay: 1s;
+    /* animation-delay: 1s; */
     animation-fill-mode: forwards;
 }
 .home-section__text__move-right {
     animation-name: moveRight;
     animation-duration: 3s;
     animation-timing-function:  ease;
-    animation-delay: 1s;
+    /* animation-delay: 1s; */
     animation-fill-mode: forwards;
 }
 
@@ -683,8 +683,10 @@ footer {
     text-align: center;
 }
 .nettoyage__sect2 {
+    background-color: #EEE2DC;
     display: flex;
-    align-items: stretch;
+    justify-content: center;
+    /* align-items: center; */
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
@@ -707,28 +709,28 @@ footer {
     font-size: 0.9rem;
     line-height: 1.2;
 }
-
+/* 
 .nettoyage__sect2__container__img {
+    width: 65%;
+} */
+
+.nettoyage__sect2__img {
     width: 65%;
 }
 
-.nettoyage__sect2__img {
-    width: 100%;
-}
-
-.nettoyage__sect2__container__prestations {
+/* .nettoyage__sect2__container__prestations {
     width: 35%;
     background-color:#896E33;
     color: white;
     padding: 2rem;
-}
+} */
 
-.nettoyage__sect2__prestations__title {
+/* .nettoyage__sect2__prestations__title {
     font-size: 2rem;
     text-align: center;
     margin-bottom: 1rem;
 }
-
+ */
 .nettoyage__sect3__container__img {
     display: flex;
     width: 100%;
@@ -745,15 +747,18 @@ footer {
     
 }
 
-.nettoyage__sect3__figure>figcaption {
+/* .nettoyage__sect3__figure>figcaption {
     background: rgba(0, 0, 0, 0.5);
     width: 100%;
     color: white;
     height: 1.5rem;
-    /* max-width: 400px; */
-    /* font-size: 10px; */
     display: block;
     float: left;
     position: absolute;
     bottom: 0;
+  } */
+
+  .nettoyage__sect3>a {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
   }
