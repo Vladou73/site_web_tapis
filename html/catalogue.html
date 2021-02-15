@@ -13,194 +13,116 @@
 <body>
     <div class="body-container">
 
-        <header>
-            <div class="header-top">
-                <section class="header-top__left">
-                    <a class="logo" href="index.html">
-                        <h1>Galerie Shéhérazade</h1>
-                        <img class="logo__img" src="../assets/logo.png" alt="logo tapis Shéhérazade" />
-                    </a>
-                    
-                    <div class="header-top__tagline-presta">
-                        <p>Votre spécialiste tapis persan depuis 1974</p>
-                    </div>
-                </section>
-                
-                <section class="header-top__right">
-                    <div class="header-top__tagline-spe">
-                        <p>Vente, nettoyage et réparation de tapis persan sur RDV uniquement</p>
-                    </div>
-                    
-                    <a class="button button--red button--header" href="#">Prendre RDV</a>
-        
-                </section>
-        
-            </div>
-            
-    
-    
-        </header>
-    
-    <section class="header-sticky">
-        <nav class="header-nav__container">
-            <ul class="header-nav__sub-container">
-                <li><a class="header-nav__sub-container__item" href="./index.html">ACCUEIL</a></li>
-                <li><a class="header-nav__sub-container__item" href="./catalogue.html">CATALOGUE</a></li>
-                <li><a class="header-nav__sub-container__item" href="./nettoyage_restauration.html">NETTOYAGE RESTAURATION</a></li>
-                <li><a class="header-nav__sub-container__item" href="contact.html">CONTACT</a></li>
-            </ul>
-        </nav>
-    
-        <section class="header-covid">
-            <p>En raison des normes sanitaires actuelles, la galerie Shéhérazade vous reçoit uniquement sur RDV</p>
-        </section>
-    </section>
+        @@include('./header.html')
 
-    <main>
-        <section class="catalogue__sect1">
+        <main>
+            <section class="catalogue__sect1">
 
-            <h2 class="generic__section__h2">Notre catalogue</h2>
-            <div class="generic__section__text__container">
-                <p>
-                    Nous avons plus de 1000 pièces en stock, de tous coloris, motifs et tailles. 
-                    Nos pièces s’adaptent à tous vos espaces de vie : salon, salle à manger, couloir, entrée, chambre à coucher.
-                </p>
-                <p>
-                    Nos tapis persans sont de fabrication artisanale, suivant une tradition millénaire. Plus de la moitié de nos pièces sont uniques.
-                    Véritables oeuvres d’art, elles trouveront forcément une place dans votre intérieur.
-                </p>
-            </div>
-            <div class="catalogue__sect1__button__container">
-                <p>Visitez notre galerie virtuelle et prenez rendez-vous</p>
-                <a class="button button--red" href="./contact.html">Prendre RDV</a>               
-            </div>
-
-
-        </section>
-    
-        <section class="catalogue__sect2">
-
-            <h2 class="generic__section__h2">Galerie virtuelle</h2>
-
-            <div class="catalogue__sect2__carousel">
-                
-                <p class="catalogue__sect2__carousel__slide-number"></p>
-                
-                <!-- Trigger/Open The Modal -->
-
-                <!-- Next and previous buttons -->
-                <div class="catalogue__sect2__carousel__images">
-                    <a class="pointer__prev catalogue__sect2__carousel__prev" id="catalogue__sect2__carousel__prev">&#10094;</a>
-                    <!-- HERE INSERT TEMPLATE CAROUSEL IMG -->
-                    <a class="pointer__next catalogue__sect2__carousel__next" id="catalogue__sect2__carousel__next">&#10095;</a>
+                <h2 class="generic__section__h2">Notre catalogue</h2>
+                <div class="generic__section__text__container">
+                    <p>
+                        Nous avons plus de 1000 pièces en stock, de tous coloris, motifs et tailles. 
+                        Nos pièces s’adaptent à tous vos espaces de vie : salon, salle à manger, couloir, entrée, chambre à coucher.
+                    </p>
+                    <p>
+                        Nos tapis persans sont de fabrication artisanale, suivant une tradition millénaire. Plus de la moitié de nos pièces sont uniques.
+                        Véritables oeuvres d’art, elles trouveront forcément une place dans votre intérieur.
+                    </p>
                 </div>
-                
-                <!-- The Modal -->
-                <div id="catalogue__sect2__modal" class="catalogue__modal">
-
-                    <!-- Modal content -->
-                    <div class="catalogue__modal__content">
-
-                            <!-- Slideshow container -->
-                            <div class="slideshow-container">
-
-                                <div class="catalogue__modal__header">
-                                    <span class="catalogue__modal__close">&#10006;</span>
-                                    <p class="catalogue__modal__slide-number" id="catalogue__sect2__modal__slide-number"></p>
-                                </div>
-
-                                <!-- HERE INSERT TEMPLATE Full-width images with headline & footer -->
-
-                                <!-- Next and previous buttons -->
-                                <a class="pointer__prev catalogue__sect2__modal__prev" id="catalogue__sect2__modal__prev">&#10094;</a>
-                                <a class="pointer__next catalogue__sect2__modal__next" id="catalogue__sect2__modal__next">&#10095;</a>
-
-
-                                <!-- The dots/circles -->
-                                <div class="catalogue__sect2__modal__dots">
-                                    <!-- INSERT TEMPLATE DOTS HERE -->
-                                </div>
-
-                            </div>
-
-                    </div>
+                <div class="catalogue__sect1__button__container">
+                    <p>Visitez notre galerie virtuelle et prenez rendez-vous</p>
+                    <a class="button button--red" href="./contact.html">Prendre RDV</a>               
                 </div>
-                
-            </div>
 
-        </section>
-    
-        <section class="catalogue__sect3">
-            <h2 class="generic__section__h2">Détails de pièces</h2>
 
-            <div class="catalogue__sect3__articles">
-                <!-- HERE INSERT TEMPLATE CATALOGUE IMG -->
-            </div>
+            </section>
+        
+            <section class="catalogue__sect2">
 
-        <!-- The Modal for catalogue section-->
-        <div id="catalogue__sect3__modal" class="catalogue__modal">
-            <!-- Modal content -->
-            <div class="catalogue__modal__content">
-                <!-- Slideshow container -->
-                <div class="slideshow-container">
+                <h2 class="generic__section__h2">Galerie virtuelle</h2>
 
-                    <div class="catalogue__modal__header">
-                        <span class="catalogue__modal__close">&#10006;</span>
-                        <p class="catalogue__modal__slide-number" id="catalogue__sect3__modal__slide-number"></p>
-                    </div>
-
-                    <!-- HERE INSERT TEMPLATE Full-width images with headline & footer -->
+                <div class="catalogue__sect2__carousel">
+                    
+                    <p class="catalogue__sect2__carousel__slide-number"></p>
+                    
+                    <!-- Trigger/Open The Modal -->
 
                     <!-- Next and previous buttons -->
-                    <a class="pointer__prev catalogue__sect2__modal__prev" id="catalogue__sect3__modal__prev">&#10094;</a>
-                    <a class="pointer__next catalogue__sect2__modal__next" id="catalogue__sect3__modal__next">&#10095;</a>
+                    <div class="catalogue__sect2__carousel__images">
+                        <a class="pointer__prev catalogue__sect2__carousel__prev" id="catalogue__sect2__carousel__prev">&#10094;</a>
+                        <!-- HERE INSERT TEMPLATE CAROUSEL IMG -->
+                        <a class="pointer__next catalogue__sect2__carousel__next" id="catalogue__sect2__carousel__next">&#10095;</a>
+                    </div>
+                    
+                    <!-- The Modal -->
+                    <div id="catalogue__sect2__modal" class="catalogue__modal">
+
+                        <!-- Modal content -->
+                        <div class="catalogue__modal__content">
+
+                                <!-- Slideshow container -->
+                                <div class="slideshow-container">
+
+                                    <div class="catalogue__modal__header">
+                                        <span class="catalogue__modal__close">&#10006;</span>
+                                        <p class="catalogue__modal__slide-number" id="catalogue__sect2__modal__slide-number"></p>
+                                    </div>
+
+                                    <!-- HERE INSERT TEMPLATE Full-width images with headline & footer -->
+
+                                    <!-- Next and previous buttons -->
+                                    <a class="pointer__prev catalogue__sect2__modal__prev" id="catalogue__sect2__modal__prev">&#10094;</a>
+                                    <a class="pointer__next catalogue__sect2__modal__next" id="catalogue__sect2__modal__next">&#10095;</a>
+
+
+                                    <!-- The dots/circles -->
+                                    <div class="catalogue__sect2__modal__dots">
+                                        <!-- INSERT TEMPLATE DOTS HERE -->
+                                    </div>
+
+                                </div>
+
+                        </div>
+                    </div>
+                    
+                </div>
+
+            </section>
+        
+            <section class="catalogue__sect3">
+                <h2 class="generic__section__h2">Détails de pièces</h2>
+
+                <div class="catalogue__sect3__articles">
+                    <!-- HERE INSERT TEMPLATE CATALOGUE IMG -->
+                </div>
+
+            <!-- The Modal for catalogue section-->
+            <div id="catalogue__sect3__modal" class="catalogue__modal">
+                <!-- Modal content -->
+                <div class="catalogue__modal__content">
+                    <!-- Slideshow container -->
+                    <div class="slideshow-container">
+
+                        <div class="catalogue__modal__header">
+                            <span class="catalogue__modal__close">&#10006;</span>
+                            <p class="catalogue__modal__slide-number" id="catalogue__sect3__modal__slide-number"></p>
+                        </div>
+
+                        <!-- HERE INSERT TEMPLATE Full-width images with headline & footer -->
+
+                        <!-- Next and previous buttons -->
+                        <a class="pointer__prev catalogue__sect2__modal__prev" id="catalogue__sect3__modal__prev">&#10094;</a>
+                        <a class="pointer__next catalogue__sect2__modal__next" id="catalogue__sect3__modal__next">&#10095;</a>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        </section>
-    
-    </main>
+            </section>
+        
+        </main>
 
+        @@include('./header.html')
 
-    <footer>
-        <section class="footer-top">
-            <div>
-                <h3>Prestations</h3>
-                <ul>
-                    <li><a href="#catalogue">Vente</a></li>
-                    <li><a href="#restauration">Nettoyage</a></li>
-                    <li><a href="#restauration">Restauration</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3>Contact</h3>
-                <ul>
-                    <li><a href="#contact">Téléphone</a></li>
-                    <li><a href="#contact">Adresse</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3>Notre Société</h3>
-                <ul>
-                    <li><a href="#société shéhérazade">Qui sommes-nous</a></li>
-                    <li><a href="tapis persan"></a>Le tapis persan</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="footer-bottom">
-            <div>devis gratuit</div>
-            <div>enlèvement et livraison</div>
-            <div>garantie décennale</div>
-            <div>facilité de paiement</div>
-        </section>
-
-        <div class="social-media">
-            <a href="#facebook">facebook logo</a>
-            <a href="#facebook">youtube logo</a>
-        </div>
-    </footer>
     </div>
 
     <!-- TEMPLATES -->

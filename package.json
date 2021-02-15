@@ -1,0 +1,23 @@
+{
+  "name": "site_web_tapis",
+  "version": "1.0.0",
+  "description": "## Site vitrine",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vladou73/site_web_tapis.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vladou73/site_web_tapis/issues"
+  },
+  "homepage": "https://github.com/Vladou73/site_web_tapis#readme",
+  "dependencies": {
+    "emailjs-com": "^2.6.4",
+    "lightbox2": "^2.11.3"
+  }
+}

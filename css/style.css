@@ -4,10 +4,15 @@ body {
     display: flex;
     justify-content: center;
     /* background-color: #F0EEEE; */
-    font-family: 'Crimson Text', serif;
-    /* font-family: sans-serif; */
+    /* font-family: 'Open Sans', sans-serif; */
+    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Source Sans Pro', sans-serif; */
+    line-height: 1.5;
+
+}
+
+h1, h2, h3, .header-top, .header-nav__container {
     font-family: 'Lora', serif;
-    line-height: 1.75;
 }
 
 /* MAKE SURE NO TRANSITION HAPPENS WHILE PAGE IS LOADING */
@@ -223,9 +228,9 @@ body {
     justify-content: center;
     align-items: center;
 
-    background-color: rgba(0,0,0,.6);
+    background-color: rgba(0,0,0,.7);
     color: white;
-    text-shadow: 2px 2px 2px black;
+    /* text-shadow: 2px 2px 2px black; */
 
     visibility:hidden;
 }

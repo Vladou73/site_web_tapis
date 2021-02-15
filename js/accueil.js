@@ -15,7 +15,7 @@ const accueil = {
         const options = {
             root:null,
             rootMargin: '0px',
-            threshold: 0.3
+            threshold: 0.01
         }
         // separate odd and even sections, with text block which moves right or left
         const oddObserver = new IntersectionObserver(accueil.animateMoveLeft, options);
