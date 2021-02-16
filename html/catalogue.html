@@ -8,12 +8,57 @@
     <!-- <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap-reboot.css"> -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
+    <link href="../css/lightbox.css" rel="stylesheet" />
 </head>
 <body>
     <div class="body-container">
 
-        @@include('./header.html')
+        <header>
+            <div class="header-top">
+                <section class="header-top__left">
+                    <a class="logo" href="index.html">
+                        <h1>Galerie Shéhérazade</h1>
+                        <img class="logo__img" src="../assets/logo.png" alt="logo tapis Shéhérazade" />
+                    </a>
+                    
+                    <div class="header-top__tagline-presta">
+                        <p>Votre spécialiste tapis persan depuis 1974</p>
+                    </div>
+                </section>
+                
+                <section class="header-top__right">
+                    <div class="header-top__tagline-spe">
+                        <p>Vente, nettoyage et réparation de tapis persan sur RDV uniquement</p>
+                    </div>
+                    
+                    <a class="button button--red button--header" href="#">Prendre RDV</a>
+        
+                </section>
+        
+            </div>
+            
+    
+    
+        </header>
+    
+        <section class="header-sticky">
+            <nav class="header-nav__container">
+                <ul class="header-nav__sub-container">
+                    <li><a class="header-nav__sub-container__item" href="./index.html">ACCUEIL</a></li>
+                    <li><a class="header-nav__sub-container__item" href="./catalogue.html">CATALOGUE</a></li>
+                    <li><a class="header-nav__sub-container__item" href="./nettoyage_restauration.html">NETTOYAGE RESTAURATION</a></li>
+                    <li><a class="header-nav__sub-container__item" href="contact.html">CONTACT</a></li>
+                </ul>
+            </nav>
+        
+            <section class="header-covid">
+                <p>En raison des normes sanitaires actuelles, la galerie Shéhérazade vous reçoit uniquement sur RDV</p>
+            </section>
+        </section>
 
         <main>
             <section class="catalogue__sect1">
@@ -40,7 +85,7 @@
             <section class="catalogue__sect2">
 
                 <h2 class="generic__section__h2">Galerie virtuelle</h2>
-
+                
                 <div class="catalogue__sect2__carousel">
                     
                     <p class="catalogue__sect2__carousel__slide-number"></p>
@@ -121,11 +166,50 @@
         
         </main>
 
-        @@include('./header.html')
+        <footer>
+            <section class="footer-top">
+                <div>
+                    <h3>Prestations</h3>
+                    <ul>
+                        <li><a href="#catalogue">Vente</a></li>
+                        <li><a href="#restauration">Nettoyage</a></li>
+                        <li><a href="#restauration">Restauration</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="#contact">Téléphone</a></li>
+                        <li><a href="#contact">Adresse</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Notre Société</h3>
+                    <ul>
+                        <li><a href="#société shéhérazade">Qui sommes-nous</a></li>
+                        <li><a href="tapis persan"></a>Le tapis persan</li>
+                    </ul>
+                </div>
+            </section>
+    
+            <section class="footer-bottom">
+                <div>devis gratuit</div>
+                <div>enlèvement et livraison</div>
+                <div>garantie décennale</div>
+                <div>facilité de paiement</div>
+            </section>
+    
+            <div class="social-media">
+                <a href="#facebook">facebook logo</a>
+                <a href="#facebook">youtube logo</a>
+            </div>
+        </footer>
 
     </div>
 
+    
     <!-- TEMPLATES -->
+    
     <template id="template__carrousel-slide">
         <img class="catalogue__sect2__carousel__slide catalogue__sect2__carousel__image--small" src="../assets/" alt="">
     </template>
@@ -146,13 +230,20 @@
         <span class="catalogue__sect2__modal__dot" onclick=""></span>
     </template>
 
-    <template id="template__catalogue-article">
+    <!-- <template id="template__catalogue-article">
         <img class="catalogue__sect3__article" src="../assets/" alt="">
+    </template> -->
+
+    <template id="template__catalogue-article">
+        <a class="catalogue__sect3__article" href="../assets/" data-lightbox="example-set" data-title="Mettre un gros titre en figure caption">    
+            <img class="" src="../assets/" alt="">
+        </a>
     </template>
 
 
     <!-- SCRIPTS -->
-    <script src="../js/app.js"></script>
+    <script src="../js/catalogue.js"></script>
+    <script src="../js/lightbox-plus-jquery.js"></script>
 
 </body>
 </html>

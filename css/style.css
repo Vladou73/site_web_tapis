@@ -659,7 +659,9 @@ footer {
 .catalogue__sect3__article {
     width:20%;
 }
-
+.catalogue__sect3__article>img {
+    width:100%;
+}
 
 
 /* PAGE NETTOYAGE */
