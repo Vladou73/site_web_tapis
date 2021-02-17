@@ -28,13 +28,15 @@ const app = {
   //Calls carpet data in json file
   app.loadJsonData = async function(){
     try {
-      const response = await fetch('../data/catalogue.json');
-  
-      if (response.status !== 200) {
-        let error = await response.json();
-        throw error;
+      const catalogue = await fetch('../data/catalogue.json');
+      const catalogueMin = await fetch('../data/catalogue_min.json');
+      if (catalogue.status !== 200 || catalogueMin.status !== 200) {
+        let res1 = await catalogue.json();
+        let res2 = await catalogueMin.json();
+        throw {res1, res2};
       } else {
-        app.dataCatalogue = await response.json();
+        app.dataCatalogue = await catalogue.json();
+        app.dataCatalogueMin = await catalogueMin.json();
       }
     } catch(error) {
       alert('impossible de charger les images');
@@ -43,7 +45,7 @@ const app = {
   }
   //use template tag, images & json data to create html elements for the carousel
   app.createCarouselSlides = function() {
-    const dataCarousel = app.dataCatalogue.filter(elem => elem.section === 2);
+    const dataCarousel = app.dataCatalogue.filter(elem => elem.section === 'situ');
     
     //reorder carpets in the order wanted
     dataCarousel.sort((a,b)=>{
@@ -60,12 +62,14 @@ const app = {
   }
   //use template tag, images & json data to create html elements for the catalogue
   app.createCatalogueSlides = function() {
-    const data = app.dataCatalogue.filter(elem => elem.section === 3);
+    const data = app.dataCatalogue.filter(elem => elem.section === "cat");
+    
     data.sort((a,b)=>{
       if (a.order < b.order) {
         return -1;
       } else {return 1};
     })
+ 
     for (let elem of data) {
       app.addCatalogueArticleToDom(elem);
     //   app.addCatalogueModalSlideToDom(elem);
@@ -81,8 +85,9 @@ const app = {
     
   
     //set image attributes with json data
-    newImg.setAttribute('src', "../assets/catalogue/" + elem.file_name);
-    newArticle.setAttribute('href', "../assets/catalogue/" + elem.file_name);
+    //fetch photos and min photos paths
+    newImg.setAttribute('src', "../images/catalogue_min/" + elem.ref + '_' + elem.section + '_min.jpg');
+    newArticle.setAttribute('href', "../images/catalogue_full_width/" + elem.file_name);
     newImg.setAttribute('alt',elem.title);
   
     //insert newImg in DOM
