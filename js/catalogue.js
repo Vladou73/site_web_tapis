@@ -11,6 +11,14 @@ const app = {
   
     //get carpet data from JSON => needed to load images
     await app.loadJsonData();
+
+    //call lightbox options
+    lightbox.option({
+      'albumLabel':"Image %1 sur %2",
+      'wrapAround': true,
+      'alwaysShowNavOnTouchDevices':true
+    })
+
     // Process json data & template elements to add img elements to DOM
     app.createCarouselSlides();
     app.createCatalogueSlides();
@@ -90,11 +98,22 @@ const app = {
     newArticle.setAttribute('href', "../images/catalogue_full_width/" + elem.file_name);
     newImg.setAttribute('alt',elem.title);
   
+    app.addDetailsToModalImg(elem, newArticle);
+
     //insert newImg in DOM
     const parent = document.querySelector('.catalogue__sect3__articles');
     parent.appendChild(newArticle);
   }
   
+  app.addDetailsToModalImg = function(elem, article) {
+    articleDetails = `
+      <p>${elem.title}</p>
+      <p>Dimensions : ${elem.width} x ${elem.length}</p>
+      <p>Durée de fabrication : ${elem.manufacturing_duration} ${(elem.manufacturing_duration>1)? "ans" : "an"}</p>`
+    article.setAttribute('data-title', articleDetails)
+    console.log(article)
+  }
+
   app.addCarouselSlideToDom = function(elem) {
     //create a clone of the template
     const newCarouselSlide = document.importNode(document.getElementById('template__carrousel-slide').content, true);
@@ -109,6 +128,7 @@ const app = {
     const nextElem = document.querySelector('#catalogue__sect2__carousel__next');
     parent.insertBefore(newImg, nextElem);
   }
+
   
   app.addCatalogueModalSlideToDom = function(elem) {
     //create a clone of the template
