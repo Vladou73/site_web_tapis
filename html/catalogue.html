@@ -99,37 +99,6 @@
                         <a class="pointer__next catalogue__sect2__carousel__next" id="catalogue__sect2__carousel__next">&#10095;</a>
                     </div>
                     
-                    <!-- The Modal -->
-                    <div id="catalogue__sect2__modal" class="catalogue__modal">
-
-                        <!-- Modal content -->
-                        <div class="catalogue__modal__content">
-
-                                <!-- Slideshow container -->
-                                <div class="slideshow-container">
-
-                                    <div class="catalogue__modal__header">
-                                        <span class="catalogue__modal__close">&#10006;</span>
-                                        <p class="catalogue__modal__slide-number" id="catalogue__sect2__modal__slide-number"></p>
-                                    </div>
-
-                                    <!-- HERE INSERT TEMPLATE Full-width images with headline & footer -->
-
-                                    <!-- Next and previous buttons -->
-                                    <a class="pointer__prev catalogue__sect2__modal__prev" id="catalogue__sect2__modal__prev">&#10094;</a>
-                                    <a class="pointer__next catalogue__sect2__modal__next" id="catalogue__sect2__modal__next">&#10095;</a>
-
-
-                                    <!-- The dots/circles -->
-                                    <div class="catalogue__sect2__modal__dots">
-                                        <!-- INSERT TEMPLATE DOTS HERE -->
-                                    </div>
-
-                                </div>
-
-                        </div>
-                    </div>
-                    
                 </div>
 
             </section>
@@ -140,27 +109,6 @@
                 <div class="catalogue__sect3__articles">
                     <!-- HERE INSERT TEMPLATE CATALOGUE IMG -->
                 </div>
-
-            <!-- The Modal for catalogue section-->
-            <div id="catalogue__sect3__modal" class="catalogue__modal">
-                <!-- Modal content -->
-                <div class="catalogue__modal__content">
-                    <!-- Slideshow container -->
-                    <div class="slideshow-container">
-
-                        <div class="catalogue__modal__header">
-                            <span class="catalogue__modal__close">&#10006;</span>
-                            <p class="catalogue__modal__slide-number" id="catalogue__sect3__modal__slide-number"></p>
-                        </div>
-
-                        <!-- HERE INSERT TEMPLATE Full-width images with headline & footer -->
-
-                        <!-- Next and previous buttons -->
-                        <a class="pointer__prev catalogue__sect2__modal__prev" id="catalogue__sect3__modal__prev">&#10094;</a>
-                        <a class="pointer__next catalogue__sect2__modal__next" id="catalogue__sect3__modal__next">&#10095;</a>
-                    </div>
-                </div>
-            </div>
 
             </section>
         
@@ -209,32 +157,11 @@
 
     
     <!-- TEMPLATES -->
-    
     <template id="template__carrousel-slide">
-        <img class="catalogue__sect2__carousel__slide catalogue__sect2__carousel__image--small" src="../assets/" alt="">
+        <a class="catalogue__sect2__carousel__slide catalogue__sect2__carousel__image--small" href="../images/" data-lightbox="example-set" data-title="">    
+            <img class="" src="../images/" alt="">
+        </a>
     </template>
-
-    <template id="template__modal-slide">
-        <figure>
-            <h3></h3>
-            <img class="catalogue__modal__img" src="../assets/" alt="">
-            <figcaption class="catalogue__modal__footer">
-                <p>Dimensions</p>
-                <p>Origine</p>
-                <p>Durée de fabrication</p>
-            </figcaption>
-        </figure>
-    </template>
-
-    <template id="template__modal-dot">
-        <span class="catalogue__sect2__modal__dot" onclick=""></span>
-    </template>
-
-    <!-- <template id="template__catalogue-article">
-        <img class="catalogue__sect3__article" src="../assets/" alt="">
-    </template> -->
-
-
     
     <!-- En plus le mieux, c'est de faire un template avec les photos complémentaires, et les mettre toutes ensembles avec data-lightbox.
     Ensuite on a juste à hide les autres photos, et on les appelle et unhide quand nécessaire  -->
@@ -249,12 +176,6 @@
 
     <script src="../js/catalogue.js"></script>
     <script src="../js/lightbox-plus-jquery.js"></script>
-    <!-- <script>
-        lightbox.option({
-          'resizeDuration': 200,
-          'wrapAround': true
-        })
-    </script> -->
 
 </body>
 </html>
