@@ -195,27 +195,27 @@ h1, h2, h3, .header-top, .header-nav__container {
 }
 
 .home-section__1 {
-    background-image: url(../assets/home2.jpg);
+    background-image: url(../images/catalogue_full_width/3092_situ_1.jpg);
     justify-content: flex-end;
 }
 
 .home-section__2 {
-    background-image: url(../assets/home3.jpg);
+    background-image: url(../images/catalogue_full_width/3149_situ_1.jpg);
     justify-content: flex-start;
 }
 
 .home-section__3 {
-    background-image: url(../assets/home4.jpg);
+    background-image: url(../images/catalogue_full_width/6153_situ_2.jpg);
     justify-content: flex-end;
 }
 
 .home-section__4 {
-    background-image: url(../assets/home2.jpg);
+    background-image: url(../images/catalogue_full_width/6103_situ_2.jpg);
     justify-content: flex-start;
 }
 
 .home-section__5 {
-    background-image: url(../assets/interieur1.jpg);
+    background-image: url(../images/catalogue_full_width/6154_situ_1.jpg);
     justify-content: flex-end;
 }
 
