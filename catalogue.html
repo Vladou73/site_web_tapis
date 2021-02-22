@@ -4,15 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage Tapis Persan Shéhérazade</title>
-    <link rel="stylesheet" href="../css/reset.css">
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/lightbox.css">
+
     <!-- <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap-reboot.css"> -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css">
-    <link href="../css/lightbox.css" rel="stylesheet" />
+    
 </head>
 <body>
     <div class="body-container">
@@ -22,7 +25,7 @@
                 <section class="header-top__left">
                     <a class="logo" href="index.html">
                         <h1>Galerie Shéhérazade</h1>
-                        <img class="logo__img" src="../images/logos/logo.png" alt="logo tapis Shéhérazade" />
+                        <img class="logo__img" src="./images/logos/logo.png" alt="logo tapis Shéhérazade" />
                     </a>
                     
                     <div class="header-top__tagline-presta">
@@ -35,7 +38,7 @@
                         <p>Vente, nettoyage et réparation de tapis persan sur RDV uniquement</p>
                     </div>
                     
-                    <a class="button button--red button--header" href="#">Prendre RDV</a>
+                    <a class="button button--red button--header" href="./contact.html">Prendre RDV</a>
         
                 </section>
         
@@ -50,8 +53,8 @@
                 <ul class="header-nav__sub-container">
                     <li><a class="header-nav__sub-container__item" href="./index.html">ACCUEIL</a></li>
                     <li><a class="header-nav__sub-container__item" href="./catalogue.html">CATALOGUE</a></li>
-                    <li><a class="header-nav__sub-container__item" href="./nettoyage_restauration.html">NETTOYAGE RESTAURATION</a></li>
-                    <li><a class="header-nav__sub-container__item" href="contact.html">CONTACT</a></li>
+                    <li><a class="header-nav__sub-container__item" href="./nettoyage.html">NETTOYAGE RESTAURATION</a></li>
+                    <li><a class="header-nav__sub-container__item" href="./contact.html">CONTACT</a></li>
                 </ul>
             </nav>
         
@@ -119,23 +122,23 @@
                 <div>
                     <h3>Prestations</h3>
                     <ul>
-                        <li><a href="#catalogue">Vente</a></li>
-                        <li><a href="#restauration">Nettoyage</a></li>
-                        <li><a href="#restauration">Restauration</a></li>
+                        <li><a href="./catalogue.html">Vente</a></li>
+                        <li><a href="./nettoyage.html">Nettoyage</a></li>
+                        <li><a href="./nettoyage.html">Restauration</a></li>
                     </ul>
                 </div>
                 <div>
                     <h3>Contact</h3>
                     <ul>
-                        <li><a href="#contact">Téléphone</a></li>
-                        <li><a href="#contact">Adresse</a></li>
+                        <li><a href="./contact.html">Téléphone</a></li>
+                        <li><a href="./contact.html">Adresse</a></li>
                     </ul>
                 </div>
                 <div>
                     <h3>Notre Société</h3>
                     <ul>
                         <li><a href="#société shéhérazade">Qui sommes-nous</a></li>
-                        <li><a href="tapis persan"></a>Le tapis persan</li>
+                        <li><a href="#tapis persan"></a>Le tapis persan</li>
                     </ul>
                 </div>
             </section>
@@ -149,7 +152,7 @@
     
             <div class="social-media">
                 <a href="#facebook">facebook logo</a>
-                <a href="#facebook">youtube logo</a>
+                <a href="#youtube">youtube logo</a>
             </div>
         </footer>
 
@@ -158,24 +161,24 @@
     
     <!-- TEMPLATES -->
     <template id="template__carrousel-slide">
-        <a class="catalogue__sect2__carousel__slide catalogue__sect2__carousel__image--small" href="../images/" data-lightbox="carrousel" data-title="">    
-            <img class="" src="../images/" alt="">
+        <a class="catalogue__sect2__carousel__slide catalogue__sect2__carousel__image--small" href="./images/" data-lightbox="carrousel" data-title="">    
+            <img class="" src="./images/" alt="">
         </a>
     </template>
     
     <!-- En plus le mieux, c'est de faire un template avec les photos complémentaires, et les mettre toutes ensembles avec data-lightbox.
     Ensuite on a juste à hide les autres photos, et on les appelle et unhide quand nécessaire  -->
     <template id="template__catalogue-article">
-        <a class="catalogue__sect3__article" href="../images/" data-lightbox="catalogue" data-title="">    
-            <img class="" src="../images/" alt="">
+        <a class="catalogue__sect3__article" href="./images/" data-lightbox="catalogue" data-title="">    
+            <img class="" src="./images/" alt="">
         </a>
     </template>
 
 
     <!-- SCRIPTS -->
 
-    <script src="../js/catalogue.js"></script>
-    <script src="../js/lightbox-plus-jquery.js"></script>
+    <script src="./js/catalogue.js"></script>
+    <script src="./js/lightbox-plus-jquery.js"></script>
 
 </body>
 </html>

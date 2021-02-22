@@ -38,6 +38,7 @@ const app = {
     try {
       const catalogue = await fetch('../data/catalogue.json');
       const catalogueMin = await fetch('../data/catalogue_min.json');
+      console.log(catalogue);
       if (catalogue.status !== 200 || catalogueMin.status !== 200) {
         let res1 = await catalogue.json();
         let res2 = await catalogueMin.json();
