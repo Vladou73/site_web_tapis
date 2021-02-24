@@ -245,14 +245,14 @@ h1, h2, h3, .header-top, .header-nav__container {
 /* TEXT ANIMATIONS : NEED TO ADD display:none AND ADD JS rules to start transition when scroll / viewport ok*/ 
 .home-section__text__move-left {
     animation-name: moveLeft;
-    animation-duration: 3s;
+    animation-duration: 2s;
     animation-timing-function:  ease;
     /* animation-delay: 1s; */
     animation-fill-mode: forwards;
 }
 .home-section__text__move-right {
     animation-name: moveRight;
-    animation-duration: 3s;
+    animation-duration: 2s;
     animation-timing-function:  ease;
     /* animation-delay: 1s; */
     animation-fill-mode: forwards;

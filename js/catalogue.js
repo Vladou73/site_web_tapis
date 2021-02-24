@@ -33,25 +33,44 @@ const app = {
     app.switchCarouselSlides(app.slideIndex);
   
   }
-  //Calls carpet data in json file
+
+  // Calls carpet data in json file with asynchronous jquery functions
   app.loadJsonData = async function(){
-    try {
-      const catalogue = await fetch('../data/catalogue.json');
-      const catalogueMin = await fetch('../data/catalogue_min.json');
-      console.log(catalogue);
-      if (catalogue.status !== 200 || catalogueMin.status !== 200) {
-        let res1 = await catalogue.json();
-        let res2 = await catalogueMin.json();
-        throw {res1, res2};
-      } else {
-        app.dataCatalogue = await catalogue.json();
-        app.dataCatalogueMin = await catalogueMin.json();
-      }
-    } catch(error) {
-      alert('impossible de charger les images');
-      console.error(error);
-    }
+    await $.getJSON('./data/catalogue.json', function(data) {
+      app.dataCatalogue = data
+    }).fail(function(){
+      console.log('error occured for app.dataCatalogue');
+      // throw new Error
+    });
+
+    // await $.getJSON('./data/catalogue_min.json', function(data) {
+    //   app.dataCatalogueMin = data
+    // }).fail(function(){
+    //   console.log('error occured for app.dataCatalogueMin')
+    // });
   }
+  //This method is not supported by old browers 
+  // async function(){
+  //   try {
+  //     const catalogue = await fetch('../data/catalogue.json');
+  //     const catalogueMin = await fetch('../data/catalogue_min.json');
+  //     console.log(catalogue);
+  //     if (catalogue.status !== 200 || catalogueMin.status !== 200) {
+  //       let res1 = await catalogue.json();
+  //       let res2 = await catalogueMin.json();
+  //       throw {res1, res2};
+  //     } else {
+  //       app.dataCatalogue = await catalogue.json();
+  //       app.dataCatalogueMin = await catalogueMin.json();
+  //     }
+  //   } catch(error) {
+  //     alert('impossible de charger les images');
+  //     console.error(error);
+  //   }
+  // }
+
+
+  
   //use template tag, images & json data to create html elements for the carousel
   app.createCarouselSlides = function() {
     const dataCarousel = app.dataCatalogue.filter(elem => elem.section === 'cat');
@@ -95,8 +114,8 @@ const app = {
   
     //set image attributes with json data
     //fetch photos and min photos paths
-    newImg.setAttribute('src', "../images/catalogue_min/" + elem.ref + '_' + elem.section + '_min.jpg');
-    newArticle.setAttribute('href', "../images/catalogue_full_width/" + elem.file_name);
+    newImg.setAttribute('src', "./images/catalogue_min/" + elem.ref + '_' + elem.section + '_min.jpg');
+    newArticle.setAttribute('href', "./images/catalogue_full_width/" + elem.file_name);
     newImg.setAttribute('alt',elem.title);
   
     app.addDetailsToModalImg(elem, newArticle);
@@ -123,8 +142,8 @@ const app = {
 
       //set image attributes with json data
       //fetch photos and min photos paths
-      newImg.setAttribute('src', "../images/catalogue_min/" + elem.ref + '_situ_' + i + '_min.jpg');
-      newSlide.setAttribute('href', "../images/catalogue_full_width/" + elem.ref + '_situ_' + i + '.jpg');
+      newImg.setAttribute('src', "./images/catalogue_min/" + elem.ref + '_situ_' + i + '_min.jpg');
+      newSlide.setAttribute('href', "./images/catalogue_full_width/" + elem.ref + '_situ_' + i + '.jpg');
       newImg.setAttribute('alt',elem.title);
     
       app.addDetailsToModalImg(elem, newSlide);
