@@ -100,6 +100,7 @@ const app = {
  
     for (let elem of data) {
       app.addCatalogueArticleToDom(elem);
+      app.addCatalogueHiddenArticlesToDom(elem);
     //   app.addCatalogueModalSlideToDom(elem);
     }
   }
@@ -116,6 +117,7 @@ const app = {
     //fetch photos and min photos paths
     newImg.setAttribute('src', "./images/catalogue_min/" + elem.ref + '_' + elem.section + '_min.jpg');
     newArticle.setAttribute('href', "./images/catalogue_full_width/" + elem.file_name);
+    newArticle.setAttribute("data-lightbox", "catalogue_" + elem.ref);
     newImg.setAttribute('alt',elem.title);
   
     app.addDetailsToModalImg(elem, newArticle);
@@ -152,11 +154,35 @@ const app = {
       const parent = document.querySelector('.catalogue__sect2__carousel__images');
       const nextElem = document.querySelector('#catalogue__sect2__carousel__next');
       parent.insertBefore(newSlide, nextElem);
-
     }
-
   }
   
+  app.addCatalogueHiddenArticlesToDom = function(elem) {
+    for (let i=1; i<=elem.situ; i++) {
+      //create a clone of the template
+      const newCataloguelArticle = document.importNode(document.getElementById('template__catalogue-article').content, true);
+      const newArticle = newCataloguelArticle.querySelector('a');
+      const newImg = newCataloguelArticle.querySelector('img');
+
+      //set image attributes with json data
+      //fetch photos and min photos paths
+      newImg.setAttribute('src', "./images/catalogue_min/" + elem.ref + '_situ_' + i + '_min.jpg');
+      newArticle.setAttribute('href', "./images/catalogue_full_width/" + elem.ref + '_situ_' + i + '.jpg');
+      newImg.setAttribute('alt',elem.title);
+      //set same attribute data-lightbox than the visible catalogue article with its reference
+      newArticle.setAttribute("data-lightbox", "catalogue_" + elem.ref)
+      //hide the article. Only the img in the modal will be visible if scrolled
+      newArticle.style.display = 'none';
+
+      app.addDetailsToModalImg(elem, newArticle);
+
+      //insert newImg in DOM
+      const parent = document.querySelector('.catalogue__sect3__articles');
+      parent.appendChild(newArticle);
+    }
+  }
+
+
   //put all eventListeners on catalogue page elements
   app.eventListenersInitialization = function() {
     // When the user clicks on the prev/next buttons of carousel, changes slide
