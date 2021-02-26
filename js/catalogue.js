@@ -158,6 +158,7 @@ const app = {
   }
   
   app.addCatalogueHiddenArticlesToDom = function(elem) {
+    // for a future development, also add backward photos 
     for (let i=1; i<=elem.situ; i++) {
       //create a clone of the template
       const newCataloguelArticle = document.importNode(document.getElementById('template__catalogue-article').content, true);
