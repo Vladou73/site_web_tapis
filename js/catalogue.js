@@ -1,8 +1,6 @@
 const app = {
     // set first index for carousel slides
-    slideIndex : 2,
-    // set first index for catalogue slides
-    articleIndex : 1
+    slideIndex : 1
   }
   
   //script initialization
@@ -42,33 +40,7 @@ const app = {
       console.log('error occured for app.dataCatalogue');
       // throw new Error
     });
-
-    // await $.getJSON('./data/catalogue_min.json', function(data) {
-    //   app.dataCatalogueMin = data
-    // }).fail(function(){
-    //   console.log('error occured for app.dataCatalogueMin')
-    // });
   }
-  //This method is not supported by old browers 
-  // async function(){
-  //   try {
-  //     const catalogue = await fetch('../data/catalogue.json');
-  //     const catalogueMin = await fetch('../data/catalogue_min.json');
-  //     console.log(catalogue);
-  //     if (catalogue.status !== 200 || catalogueMin.status !== 200) {
-  //       let res1 = await catalogue.json();
-  //       let res2 = await catalogueMin.json();
-  //       throw {res1, res2};
-  //     } else {
-  //       app.dataCatalogue = await catalogue.json();
-  //       app.dataCatalogueMin = await catalogueMin.json();
-  //     }
-  //   } catch(error) {
-  //     alert('impossible de charger les images');
-  //     console.error(error);
-  //   }
-  // }
-
 
   
   //use template tag, images & json data to create html elements for the carousel
