@@ -166,45 +166,10 @@ const app = {
       app.switchCarouselSlides(app.slideIndex += 1);
     })
   }
-  // Thumbnail dots/image controls of the modal
-  app.currentSlide = function(n) {
-    app.showSlidesCarouselModal(app.slideIndex = n);
-  }
-  // function used for the modal within the carousel
-  app.showSlidesCarouselModal = function(n) {
-    //Cas où on click sur une image du catalogue : on veut que slideIndex corresponde à l'index de l'image
-    if (event.target.className === 'catalogue__sect2__carousel__slide catalogue__sect2__carousel__image--main') {
-      app.slideIndex = n;
-    }
-    const modal = document.getElementById("catalogue__sect2__modal");
-    modal.style.display = "block";
   
-    const slides = document.getElementsByClassName("catalogue__sect2__modal__slide");
-    const dots = document.getElementsByClassName("catalogue__sect2__modal__dot");
-    const slideNumber = document.getElementById("catalogue__sect2__modal__slide-number")
-  
-    //gestion des cas où on est en dessous de la limite de la 1ere image ou au delà de la dernière image
-    if (n > slides.length) {app.slideIndex = 1}
-    if (n < 1) {app.slideIndex = slides.length}
-    
-    let i;
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-  
-    slideNumber.textContent = `${app.slideIndex}/${slides.length}`
-    slides[app.slideIndex-1].style.display = "block";
-    dots[app.slideIndex-1].className += " active";
-    
-    // calls the function to switch slides of the carousel as it is in the modal
-    app.switchCarouselSlides(app.slideIndex);
-  }
-
   // function used for the carousel of images in situ (big image, small images transparent, swith images...)
   app.switchCarouselSlides = (n) => {
+    console.log('switchCarouselSlides', n)
     const slides = document.getElementsByClassName("catalogue__sect2__carousel__slide");
     let slideIndexPrev, slideIndexNext;
   
@@ -213,21 +178,26 @@ const app = {
     if (n < 1) {app.slideIndex = slides.length}
   
     if (app.slideIndex === 1) {
-      slideIndexPrev = slides.length;
-      slideIndexNext = 2;
+      // slideIndexPrev = slides.length;
+      slideIndexPrev = 2
+      slideIndexNext = 3;
     } else if (app.slideIndex === slides.length) {
       slideIndexPrev = app.slideIndex - 1;
-      slideIndexNext = 1;
+      slideIndexNext = app.slideIndex - 2;
+      // slideIndexNext = 1;
     } else {
       slideIndexPrev = app.slideIndex - 1;
       slideIndexNext = app.slideIndex + 1;
     }
-  
+
     // 2) Process main image, small image, and images that mustn't be displayed
     Array.from(slides).forEach((slide, index)=>{
+      // all slides must not be shown
       slide.style.display = "none";
       slide.classList.replace('catalogue__sect2__carousel__image--main','catalogue__sect2__carousel__image--small');
 
+      //show only current slide in big + prev and next slide in small
+      //-1 is because with forEach loop index starts at 0
       if (index ===  app.slideIndex-1) {
         slide.style.display = 'block';
         slide.classList.replace('catalogue__sect2__carousel__image--small','catalogue__sect2__carousel__image--main');
