@@ -1,6 +1,8 @@
 const app = {
     // set first index for carousel slides
-    slideIndex : 1
+    slideIndex : 1,
+    currentPage : 1,
+    itemsPerPage : 5
   }
   
   //script initialization
@@ -10,6 +12,9 @@ const app = {
     //get carpet data from JSON => needed to load images
     await app.loadJsonData();
 
+    //get json data for catalogue slides 
+    app.dataCatalogue = app.jsonData.filter(elem => elem.section === "cat");  
+
     //call lightbox options
     lightbox.option({
       'albumLabel':"Image %1 sur %2",
@@ -17,10 +22,13 @@ const app = {
       'alwaysShowNavOnTouchDevices':true
     })
 
-    // Process json data & template elements to add img elements to DOM
+    // Process json data & template elements to add img elements to DOM. Use pagination parameters for catalogue elements
     app.createCarouselSlides();
-    app.createCatalogueSlides();
-  
+    app.createPaginatedCatalogueSlides();
+    //setup pagination container
+    app.setupPagination();
+
+
     // Get next/previous controls for carousel
     app.btn_prev_carousel = document.getElementById("catalogue__sect2__carousel__prev")
     app.btn_next_carousel = document.getElementById("catalogue__sect2__carousel__next")
@@ -29,23 +37,23 @@ const app = {
     app.eventListenersInitialization();
     //make sure to start on right slide index of the carousel
     app.switchCarouselSlides(app.slideIndex);
+
   
   }
 
   // Calls carpet data in json file with asynchronous jquery functions
   app.loadJsonData = async function(){
     await $.getJSON('./data/catalogue.json', function(data) {
-      app.dataCatalogue = data
+      app.jsonData = data
     }).fail(function(){
-      console.log('error occured for app.dataCatalogue');
+      console.log('error occured for app.jsonData');
       // throw new Error
     });
   }
-
   
   //use template tag, images & json data to create html elements for the carousel
   app.createCarouselSlides = function() {
-    const dataCarousel = app.dataCatalogue.filter(elem => elem.section === 'cat');
+    const dataCarousel = app.dataCatalogue;
     dataCarousel.filter(elem => elem.situ >= 1);
     //reorder carpets in the order wanted
     dataCarousel.sort((a,b)=>{
@@ -56,34 +64,40 @@ const app = {
     //iterate over carpet datas to fetch images & create DOM elements
     dataCarousel.forEach((elem, index) => {
       app.addCarouselSlideToDom(elem);
-      // app.addCarouselModalSlideToDom(elem);
-      // app.addCarouselModalDotToDom(index);  
     });
   }
   //use template tag, images & json data to create html elements for the catalogue
-  app.createCatalogueSlides = function() {
-    const data = app.dataCatalogue.filter(elem => elem.section === "cat");
-    
-    data.sort((a,b)=>{
+  app.createPaginatedCatalogueSlides = function() {
+    // (re)initialize parent html element to none 
+    const parent = document.querySelector('.catalogue__sect3__articles');
+    parent.innerHTML = '';
+
+    // get pagination infos
+    let start = app.itemsPerPage * (app.currentPage - 1);
+    let end = start + app.itemsPerPage;
+  
+    app.dataCatalogue.sort((a,b)=>{
       if (a.order < b.order) {
         return -1;
       } else {return 1};
     })
  
-    for (let elem of data) {
-      app.addCatalogueArticleToDom(elem);
-      app.addCatalogueHiddenArticlesToDom(elem);
+    // apply pagination params to retrieve only items of current page
+    let paginatedItems = app.dataCatalogue.slice(start, end);
+
+    for (let elem of paginatedItems) {
+      app.addCatalogueArticleToDom(elem, parent);
+      app.addCatalogueHiddenArticlesToDom(elem, parent);
     //   app.addCatalogueModalSlideToDom(elem);
     }
   }
   
-  app.addCatalogueArticleToDom = function(elem) {
+  app.addCatalogueArticleToDom = function(elem, parent) {
     //create a clone of the template
     const newCataloguelArticle = document.importNode(document.getElementById('template__catalogue-article').content, true);
     // const newImg = newCataloguelArticle.querySelector('img');
     const newArticle = newCataloguelArticle.querySelector('a');
     const newImg = newCataloguelArticle.querySelector('img');
-    
   
     //set image attributes with json data
     //fetch photos and min photos paths
@@ -95,7 +109,6 @@ const app = {
     app.addDetailsToModalImg(elem, newArticle);
 
     //insert newImg in DOM
-    const parent = document.querySelector('.catalogue__sect3__articles');
     parent.appendChild(newArticle);
   }
   
@@ -129,7 +142,7 @@ const app = {
     }
   }
   
-  app.addCatalogueHiddenArticlesToDom = function(elem) {
+  app.addCatalogueHiddenArticlesToDom = function(elem, parent) {
     // for a future development, also add backward photos 
     for (let i=1; i<=elem.situ; i++) {
       //create a clone of the template
@@ -150,11 +163,9 @@ const app = {
       app.addDetailsToModalImg(elem, newArticle);
 
       //insert newImg in DOM
-      const parent = document.querySelector('.catalogue__sect3__articles');
       parent.appendChild(newArticle);
     }
   }
-
 
   //put all eventListeners on catalogue page elements
   app.eventListenersInitialization = function() {
@@ -169,7 +180,7 @@ const app = {
   
   // function used for the carousel of images in situ (big image, small images transparent, swith images...)
   app.switchCarouselSlides = (n) => {
-    console.log('switchCarouselSlides', n)
+    // console.log('switchCarouselSlides', n)
     const slides = document.getElementsByClassName("catalogue__sect2__carousel__slide");
     let slideIndexPrev, slideIndexNext;
   
@@ -210,4 +221,39 @@ const app = {
     document.querySelector('.catalogue__sect2__carousel__slide-number').textContent = `${app.slideIndex}/${slides.length}`
   }
   
+  app.setupPagination = function() {
+    const paginationWrapper = document.getElementById('pagination');
+    paginationWrapper.innerHTML = "";
+  
+    let pageCount = Math.ceil(app.dataCatalogue.length / app.itemsPerPage);
+    for (let i = 1; i < pageCount + 1; i++) {
+      let btn = app.paginationButton(i);
+      paginationWrapper.appendChild(btn);
+    }
+  }
+
+  app.paginationButton = function(page) {
+    //create button pagination element in DOM
+    let button = document.createElement('paginationButton');
+    button.innerText = page;
+  
+    //for current page (when initialized, current page = 1) adds class pagination active to the button for CSS style
+    if (app.currentPage == page) button.classList.add('paginationActive');
+  
+    //event listener added to each pagination button 
+    button.addEventListener('click', function () {
+      app.currentPage = page;
+      //trigger function to show pictures of selected page
+      app.createPaginatedCatalogueSlides();
+      //remove active class from former active pagination button
+      let current_btn = document.querySelector('.pagenumbers paginationButton.paginationActive');
+      current_btn.classList.remove('paginationActive');
+  
+      button.classList.add('paginationActive');
+    });
+  
+    return button;
+  }
+  
+
   document.addEventListener('DOMContentLoaded', app.init);
