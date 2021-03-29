@@ -674,17 +674,25 @@ footer {
 }
 
 /* CATALOGUE PAGINATION */
-.pagenumbers paginationButton {
-	width: 50px;
-	height: 50px;
+
+.pagination_container {
+    display:flex;
+    text-align: center;
+    width: 100%;
+    justify-content: center;
+}
+.pagination_container .pagination_prev_next, .pagination_container paginationButton {
+    cursor: pointer;
+}
+
+.pagenumbers button {
+	/* width: 50px;
+	height: 50px; */
 
 	appearance: none;
 	border: none;
 	outline: none;
-	cursor: pointer;
-
 	background-color: #44AAEE;
-
 	margin: 5px;
 	transition: 0.4s;
 
@@ -694,16 +702,21 @@ footer {
 	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
 }
 
-.pagenumbers paginationButton:hover {
+.pagenumbers button:hover {
 	background-color: #44EEAA;
 }
 
-.pagenumbers paginationButton.paginationActive {
+.pagenumbers .paginationActive {
 	background-color: #44EEAA;
 	box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.2);
 }
 
-
+.pagination_prev_next {
+    border: 1px solid black;
+    padding: 5px;
+    background-color: grey;
+    color: white;
+}
 
 
 

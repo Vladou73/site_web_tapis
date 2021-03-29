@@ -2,7 +2,7 @@ const app = {
     // set first index for carousel slides
     slideIndex : 1,
     currentPage : 1,
-    itemsPerPage : 5
+    itemsPerPage : 4
   }
   
   //script initialization
@@ -222,6 +222,7 @@ const app = {
   }
   
   app.setupPagination = function() {
+    //setup pagination buttons
     const paginationWrapper = document.getElementById('pagination');
     paginationWrapper.innerHTML = "";
   
@@ -230,11 +231,29 @@ const app = {
       let btn = app.paginationButton(i);
       paginationWrapper.appendChild(btn);
     }
+
+    //setup eventlisteners for prev and next buttons
+    const prevButton = document.getElementById('pagination_prev');
+    const nextButton = document.getElementById('pagination_next');
+
+    prevButton.addEventListener('click',function(){
+      if (app.currentPage>1){
+        app.currentPage--;
+      }
+      app.createPaginatedCatalogueSlides();
+    });
+    nextButton.addEventListener('click',function(){
+      if (app.currentPage<pageCount){
+        app.currentPage++;
+      }
+      app.createPaginatedCatalogueSlides();
+    });  
+
   }
 
   app.paginationButton = function(page) {
     //create button pagination element in DOM
-    let button = document.createElement('paginationButton');
+    let button = document.createElement('button');
     button.innerText = page;
   
     //for current page (when initialized, current page = 1) adds class pagination active to the button for CSS style
@@ -246,7 +265,7 @@ const app = {
       //trigger function to show pictures of selected page
       app.createPaginatedCatalogueSlides();
       //remove active class from former active pagination button
-      let current_btn = document.querySelector('.pagenumbers paginationButton.paginationActive');
+      let current_btn = document.querySelector('.pagenumbers .paginationActive');
       current_btn.classList.remove('paginationActive');
   
       button.classList.add('paginationActive');
