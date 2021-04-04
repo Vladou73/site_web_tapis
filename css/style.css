@@ -50,9 +50,12 @@ h1, h2, h3, .header-top, .header-nav__container {
     align-items: baseline;
 }
 
+.logo .logo__img{
+    margin-left: 0.5rem;
+}
+
 .logo__img {
     width: 2.5rem;
-    margin-left: 0.5rem;
 }
 
 .header-top__tagline-presta {
@@ -312,10 +315,10 @@ footer {
     font-weight: bold;
 }
 
-.social-media {
+/* .social-media {
     position: absolute;
     left: 90%;
-}
+} */
 
 
 
