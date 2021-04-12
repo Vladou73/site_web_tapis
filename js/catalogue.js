@@ -222,56 +222,70 @@ const app = {
   }
   
   app.setupPagination = function() {
-    //setup pagination buttons
-    const paginationWrapper = document.getElementById('pagination');
-    paginationWrapper.innerHTML = "";
-  
-    let pageCount = Math.ceil(app.dataCatalogue.length / app.itemsPerPage);
-    for (let i = 1; i < pageCount + 1; i++) {
-      let btn = app.paginationButton(i);
-      paginationWrapper.appendChild(btn);
-    }
-
-    //setup eventlisteners for prev and next buttons
+    // store elements in variables
+    const paginationContainer = document.querySelector('.pagination_container');
     const prevButton = document.getElementById('pagination_prev');
     const nextButton = document.getElementById('pagination_next');
 
+    //setup pagination buttons
+    let pageCount = Math.ceil(app.dataCatalogue.length / app.itemsPerPage);
+    for (let i = 1; i < pageCount + 1; i++) {
+      let btn = app.paginationButton(i);
+      paginationContainer.insertBefore(btn, nextButton);
+    }
+
+    //setup eventlisteners for prev and next buttons
     prevButton.addEventListener('click',function(){
       if (app.currentPage>1){
+        //set new current page
         app.currentPage--;
+        //get new active page and modify pagination buttons class
+        let activeButton = document.querySelector('.active_page').previousElementSibling;
+        app.changeActivePageClass(activeButton);
+        //load carpets
+        app.createPaginatedCatalogueSlides();
       }
-      app.createPaginatedCatalogueSlides();
     });
+
     nextButton.addEventListener('click',function(){
       if (app.currentPage<pageCount){
+        //set new current page
         app.currentPage++;
+        //get new active page and modify pagination buttons class
+        let activeButton = document.querySelector('.active_page').nextElementSibling;
+        app.changeActivePageClass(activeButton);
+        //load carpets
+        app.createPaginatedCatalogueSlides();
       }
-      app.createPaginatedCatalogueSlides();
     });  
 
   }
 
   app.paginationButton = function(page) {
     //create button pagination element in DOM
-    let button = document.createElement('button');
+    let button = document.createElement('li');
     button.innerText = page;
-  
+    button.classList.add('page_number');
+
     //for current page (when initialized, current page = 1) adds class pagination active to the button for CSS style
-    if (app.currentPage == page) button.classList.add('paginationActive');
+    if (app.currentPage == page) button.classList.add('active_page');
   
     //event listener added to each pagination button 
-    button.addEventListener('click', function () {
+    button.addEventListener('click', function(e) {
       app.currentPage = page;
       //trigger function to show pictures of selected page
       app.createPaginatedCatalogueSlides();
-      //remove active class from former active pagination button
-      let current_btn = document.querySelector('.pagenumbers .paginationActive');
-      current_btn.classList.remove('paginationActive');
-  
-      button.classList.add('paginationActive');
+      app.changeActivePageClass(e.currentTarget);
     });
   
     return button;
+  }
+
+  app.changeActivePageClass = function(button) {
+    //remove active class from former active pagination button
+    let formerActivePage = document.querySelector('.active_page');
+    formerActivePage.classList.remove('active_page');
+    button.classList.add('active_page');
   }
   
 
