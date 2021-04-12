@@ -50,12 +50,12 @@ h1, h2, h3, .header-top, .header-nav__container {
     align-items: baseline;
 }
 
-.logo .logo__img{
+.logo__carpet {
     margin-left: 0.5rem;
+    width: 3rem;
 }
-
-.logo__img {
-    width: 2.5rem;
+.logo__social_media {
+    width: 2rem;
 }
 
 .header-top__tagline-presta {
