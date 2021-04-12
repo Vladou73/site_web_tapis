@@ -165,6 +165,7 @@ h1, h2, h3, .header-top, .header-nav__container {
 .header-nav__sub-container__item {
     color: #b2b2b2;
     font-weight: bold;
+    font-size:1.1rem;
     /* text-decoration: underline; */
     /* text-decoration: italic; */
     transition: color .3s ease 0s;
