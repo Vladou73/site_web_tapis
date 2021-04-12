@@ -309,6 +309,19 @@ footer {
     justify-content: space-between;
 }
 
+.col {
+    display:flex;
+    flex-direction: column;
+}
+
+.footer-bottom__col {
+    align-items:center;
+}
+
+.footer__icon {
+    width:2.5rem;
+    margin-bottom: 0.4rem;
+}
 
 .footer-top h3 {
     font-size: 1.5rem;
