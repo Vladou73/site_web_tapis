@@ -33,7 +33,8 @@ h1, h2, h3, .header-top, .header-nav__container {
 
 .header-top {
     display:flex;
-    background-color:#EEE2DC;
+    background-color:#F2EAE4;
+    /* background-color:#EEE2DC; */
     /* #F0EEEE; */
     padding:1rem;
 }
@@ -289,7 +290,8 @@ h1, h2, h3, .header-top, .header-nav__container {
 footer {
     display:flex;
     flex-wrap: wrap;
-    background-color: #EEE2DC; 
+    background-color: #F2EAE4;
+    /* background-color: #EEE2DC;  */
     /* #F0EEEE; */
     padding:1rem;
     position: relative;
