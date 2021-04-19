@@ -17,6 +17,8 @@ HTML, CSS, vanilla JS, jquery
 
 ## Plan de développement
 
+- Pré-production : réalisation des wireframes et maquettes sur https://www.figma.com/
+
 1) Mise en production du site web en avril avec 4 pages, non responsive, non optimisé pour le SEO
 2) Mai : intégration du responsive, optimisations du code
 3) Juin : optimisation accessibilité et SEO
