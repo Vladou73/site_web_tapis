@@ -16,6 +16,8 @@ const contact = {
                     console.log('email SUCCESS!');
                     //show success modal;
                     contact.showFormModal();
+                    //reset form data
+                    document.querySelector(".contact__action__form").reset();
                 }, function(error) {
                     console.log('email FAILED', error);
                     //show failure modal;
