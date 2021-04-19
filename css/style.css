@@ -62,7 +62,6 @@ h1, h2, h3, .header-top, .header-nav__container {
 .header-top__tagline-presta {
     font-weight: bold;
     font-style: italic;
-    /* font-size: 0.8rem; */
 }
 
 .header-top__right {
@@ -75,7 +74,6 @@ h1, h2, h3, .header-top, .header-nav__container {
 
 .header-top__tagline-spe {
     width: 100%;
-    /* font-size: 0.9rem; */
     display:flex;
     justify-content: center;
     font-weight: bold;
@@ -165,7 +163,7 @@ h1, h2, h3, .header-top, .header-nav__container {
 .header-nav__sub-container__item {
     color: #b2b2b2;
     font-weight: bold;
-    font-size:1.1rem;
+    font-size:1.2rem;
     /* text-decoration: underline; */
     /* text-decoration: italic; */
     transition: color .3s ease 0s;
@@ -184,7 +182,7 @@ h1, h2, h3, .header-top, .header-nav__container {
     padding: 0.5rem;
 
     color: #CF4949;
-    font-size: 0.9rem;
+    /* font-size: 0.9rem; */
     font-weight: bold;
     font-style: italic;
 }
@@ -243,9 +241,14 @@ h1, h2, h3, .header-top, .header-nav__container {
 .home-section__text>h2 {
     font-weight: bold;
     font-style: italic;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     width: 100%;
 }
+
+.home-section__text>p {
+    font-size: 1.1rem;
+}
+
 
 /* TEXT ANIMATIONS : NEED TO ADD display:none AND ADD JS rules to start transition when scroll / viewport ok*/ 
 .home-section__text__move-left {
@@ -578,7 +581,6 @@ footer {
 .catalogue__modal__close {
     color: #aaa;
     float: right;
-    /* font-size: 28px; */
     font-weight: bold;
 }
 .catalogue__modal__close:hover,
@@ -591,8 +593,6 @@ footer {
 /* modal slide number (1/3 etc) */
 .catalogue__modal__slide-number {
     color: #f2f2f2;
-    /* font-size: 12px; */
-    /* padding: 8px 12px; */
     position: absolute;
     top: 0;
     left:50%
