@@ -321,7 +321,7 @@ footer {
     display:flex;
     /* justify-content: space-around; */
     /* justify-content: flex-end; */
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
 .footer-top>section {
@@ -436,6 +436,72 @@ footer {
 .g-recaptcha {
     margin-top:1rem;
 }
+
+/* form modal success / error */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10; 
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    overflow: auto; /* Enable scroll if needed */
+    border-radius: 20px;
+}
+
+.success-modal {
+    background-color: lightgreen;
+    color:green;
+    font-size:1.1rem;
+}
+
+.fail-modal {
+    background-color: lightcoral;
+    font-size:1.1rem;
+}
+
+.show-modal {
+    display:flex;
+}
+
+.contact__form__modal {
+    width: 50%;
+    padding: 2rem;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+  
+  /* The Close Button of the modal*/
+  .modal-close {
+    color: black;
+    float: right;
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  
+  .modal-close:hover,
+  .modal-close:focus {
+    color: #aaa;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+  #page-mask {
+    display:none;
+    position: fixed;
+    z-index:9;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    width:100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+  }
+
 
 /* CONTACT INFOS */
 .contact__info__store {
