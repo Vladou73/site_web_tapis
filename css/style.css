@@ -782,7 +782,8 @@ footer {
     width: 100%;
 }
 .catalogue__sect3__article {
-    width:25%;
+    width:18%;
+    margin-right: 7%;
 }
 .catalogue__sect3__article>img {
     width:100%;
