@@ -62,6 +62,7 @@ h1, h2, h3, .header-top, .header-nav__container {
 .header-top__tagline-presta {
     font-weight: bold;
     font-style: italic;
+    font-size:1.1rem;
 }
 
 .header-top__right {
@@ -77,6 +78,7 @@ h1, h2, h3, .header-top, .header-nav__container {
     display:flex;
     justify-content: center;
     font-weight: bold;
+    font-size:1.1rem;
 }
 
 
@@ -355,13 +357,6 @@ footer {
     font-weight: bold;
 }
 
-/* .social-media {
-    position: absolute;
-    left: 90%;
-} */
-
-
-
 
 /* PAGE CONTACT */
 .contact__main {
@@ -625,103 +620,7 @@ footer {
 .catalogue__sect2__carousel__image--main>img {
     width:100%;
 }
-
-
-
-/* MODAL OPEN GALLERY */
-
-/* The Modal (background) */
-.catalogue__modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 10; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; 
-    height: 100%; 
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-
-    /* top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
-}
-
-/* Modal Content/Box */
-.catalogue__modal__content {
-    background-color: rgba(0,0,0,0.2);
-    margin: 0% auto; /* 15% from the top and centered */
-    padding: 20px;
-    /* width: 80%; Could be more or less, depending on screen size */
-}
-
-
-/* Modal Header / Footer */
-.catalogue__modal__header {
-    font-size: 1.5rem;
-    /* color: white; */
-}
-
-.catalogue__modal__content h3 {
-    margin-bottom: 0.5rem;
-    font-size: 1.5rem;
-}
-
-.catalogue__modal__footer {
-    color: white;
-    line-height: 1;
-}
-
-  /* The Close Button */
-.catalogue__modal__close {
-    color: #aaa;
-    float: right;
-    font-weight: bold;
-}
-.catalogue__modal__close:hover,
-.catalogue__modal__close:focus {
-  color: white;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/* modal slide number (1/3 etc) */
-.catalogue__modal__slide-number {
-    color: #f2f2f2;
-    position: absolute;
-    top: 0;
-    left:50%
-}
-
-/* Slideshow container */
-.slideshow-container {
-    /* max-width: 1000px; */
-    /* width:100vh; */
-    height: 100vh;
-    width:50vw;
-    position: relative;
-    margin: auto;
-}
-
   /* SLIDESHOW */
-
-  /* Hide the images by default */
-.catalogue__sect2__modal__slide, .catalogue__sect3__modal__slide {
-    display: none;
-    width:100%;
-    height: 100%;
-    /* width:100vw; */
-    color: white;
-}
-
-.catalogue__sect2__modal__slide .catalogue__modal__img {
-    width:100%
-}
-
-.catalogue__sect3__modal__slide .catalogue__modal__img {
-    height: 100%;
-}
 
 .pointer__prev, .pointer__next {
     color: black;
@@ -738,40 +637,6 @@ footer {
 /* On hover, add a black background color with a little bit see-through */
 .pointer__prev:hover, .pointer__next:hover {
     background-color: rgba(0,0,0,0.3);
-}
-
-/* Next & previous buttons */
-.catalogue__sect2__modal__prev, .catalogue__sect2__modal__next {
-    position: absolute;
-    top: 50%;
-    margin-top: -22px;
-    color: white;
-}
-
-.catalogue__sect2__modal__prev {
-    border-radius: 0 3px 3px 0;
-}
-/* Position the "next button" to the right */
-.catalogue__sect2__modal__next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
-.catalogue__sect2__modal__dots {
-    text-align:center;
-} 
-  /* The dots/bullets/indicators */
-.catalogue__sect2__modal__dot {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: rgb(138, 129, 129);
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-}  
-.active, .catalogue__sect2__modal__dot:hover {
-    background-color: white;
 }
 
 /* CATALOGUE SECTION 3 */
