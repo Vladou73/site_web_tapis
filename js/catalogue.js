@@ -1,6 +1,6 @@
 const app = {
     // set first index for carousel slides
-    slideIndex : 1,
+    slideIndex : 2,
     currentPage : 1,
     itemsPerPage : 16
   }
