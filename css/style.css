@@ -787,3 +787,27 @@ footer {
       margin-top: 2rem;
       margin-bottom: 1rem;
   }
+
+
+  /* RESPONSIVE */
+
+  /* COMMON TO EACH PAGE */
+
+    /* HEADER */
+/* @media */
+
+    /* FOOTER */
+  @media (max-width: 550px) {
+    footer {font-size: 1rem;}
+    .footer__tagline { display:none;}
+    .footer__infos {width:100%;}
+    .footer-top, .footer-bottom {
+        flex-direction: column;
+        /* justify-content: center; */
+    }
+    .footer-top>section, .footer-bottom__col {
+        margin-left:0;
+        margin-bottom: 1rem;
+        align-items:flex-start;
+    };
+}
