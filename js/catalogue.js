@@ -200,6 +200,8 @@ const app = {
       slideIndexPrev = app.slideIndex - 1;
       slideIndexNext = app.slideIndex + 1;
     }
+    console.log(window.innerWidth)
+ 
 
     // 2) Process main image, small image, and images that mustn't be displayed
     Array.from(slides).forEach((slide, index)=>{
@@ -213,7 +215,7 @@ const app = {
         slide.style.display = 'block';
         slide.classList.replace('catalogue__sect2__carousel__image--small','catalogue__sect2__carousel__image--main');
         
-      } else if (index === slideIndexPrev-1 || index === slideIndexNext-1) {
+      } else if ((window.innerWidth > 700) && (index === slideIndexPrev-1 || index === slideIndexNext-1)) { //only show small images on desktop
         slide.style.display = "block";
       }
     })

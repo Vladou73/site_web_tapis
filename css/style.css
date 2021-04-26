@@ -860,3 +860,24 @@ footer {
         display:none;
     }
 }
+
+/* CATALOGUE */
+@media (max-width: 550px) {
+    .catalogue__sect1, .catalogue__sect2, .catalogue__sect3 {
+        padding:0;
+    }
+
+    .catalogue__sect2__carousel__image--small {
+        display:none;        
+    }
+
+    .catalogue__sect3__articles {
+        justify-content:center;
+        align-items:center;
+    }
+    .catalogue__sect3__article {
+        width:55%;
+        margin:0;
+    }
+
+}
