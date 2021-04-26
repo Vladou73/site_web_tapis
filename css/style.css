@@ -826,16 +826,21 @@ footer {
 
 /* FOOTER */
 @media (max-width: 550px) {
+    footer {
+        text-align: center;
+        font-size:1em;
+    }
     .footer__tagline { display:none;}
     .footer__infos {width:100%;}
     .footer-top, .footer-bottom {
         flex-direction: column;
-        /* justify-content: center; */
+        justify-content: center;
+        align-items: center;
     }
     .footer-top>section, .footer-bottom__col {
         margin-left:0;
         margin-bottom: 1rem;
-        align-items:flex-start;
+        /* align-items:flex-start; */
     };
 }
 
