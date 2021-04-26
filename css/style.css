@@ -796,7 +796,10 @@ footer {
 /* BODY */
 
 @media (max-width: 550px) {
-    body {font-size:0.9rem;}
+    body {
+        font-size:0.9rem;
+        text-align:center;
+    }
 }
 
 /* HEADER */
@@ -885,4 +888,31 @@ footer {
         margin:0;
     }
 
+}
+
+/* CONTACT */
+@media (max-width: 550px) {
+    .contact__action, .contact__info {
+        align-items:center;
+        justify-content: center;
+        flex-direction:column;
+        width:100%;
+    }
+    .contact__vertical-line {
+        display:none;
+    }
+    .contact__action__phone, .contact__action__form {
+        width:80%;
+        margin:0 0 2em 0;
+    }
+    .g-recaptcha {
+        transform:scale(0.85);
+        -webkit-transform:scale(0.85);
+        transform-origin:0 0;
+        -webkit-transform-origin:0 0;
+    }
+    .contact__info__store, .contact__info__maps {
+        margin-right:0;
+        margin-left:0;
+    }
 }
