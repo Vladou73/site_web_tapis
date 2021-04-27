@@ -1,10 +1,13 @@
 const accueil = {
     init :  function() {
-        console.log('script is initiated on page accueil');
-        // allow transitions on body ONLY AFTER html is loaded
-        accueil.allowTransitions();
-        // use IntersectionObserver to planify text showing animation 
-        accueil.setTextAnimationTriggers();
+        //Trigger animation only if window > 700px. Otherwise adapt with media queries
+        if (window.innerWidth > 700) {
+            console.log('script is initiated on page accueil');
+            // allow transitions on body ONLY AFTER html is loaded
+            accueil.allowTransitions();
+            // use IntersectionObserver to planify text showing animation 
+            accueil.setTextAnimationTriggers();
+        }
     },
     allowTransitions: function(){
         document.querySelector('.preload').classList.remove('preload');
