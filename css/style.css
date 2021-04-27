@@ -102,28 +102,28 @@ h1, h2, h3, .header-top, .header-nav__container {
     color: white;
 } */
 
-.button--red:hover {
+.button--red:hover, .button--red:active  {
     background-color: #A10B0B;
     color: #ffffff !important;
     border-color: #A10B0B !important;
     transition: all 0.4s ease 0s;
 }
 
-.button--dark-red:hover {
+.button--dark-red:hover, .button--dark-red:active {
     background-color: #340404;
     color: #ffffff !important;
     border-color: #340404 !important;
     transition: all 0.4s ease 0s;
 }
 
-.button--grey:hover {
+.button--grey:hover, .button--grey:active {
     background-color: #A79E9E;
     color: black !important;
     border-color: #A79E9E !important;
     transition: all 0.4s ease 0s;
 }
 
-.button--gold:hover {
+.button--gold:hover, .button--gold:active {
     background-color: #C9C68B;
     color: black !important;
     border-color: #C9C68B !important;
@@ -135,7 +135,7 @@ h1, h2, h3, .header-top, .header-nav__container {
     background-color: #A10B0B;
     border-color: #A10B0B !important;
 }
-.button--header:hover {
+.button--header:hover, .button--header:active {
     background-color: #494949;
     color: #A10B0B !important;
     background: #ffffff;
@@ -171,7 +171,7 @@ h1, h2, h3, .header-top, .header-nav__container {
     transition: color .3s ease 0s;
 }
 
-.header-nav__sub-container__item:hover {
+.header-nav__sub-container__item:hover, .header-nav__sub-container__item:active {
     color: white;
 }
 
@@ -477,7 +477,8 @@ footer {
   }
   
   .modal-close:hover,
-  .modal-close:focus {
+  .modal-close:focus,
+  .modal-close:active {
     color: #aaa;
     text-decoration: none;
     cursor: pointer;
@@ -635,7 +636,7 @@ footer {
 }
 
 /* On hover, add a black background color with a little bit see-through */
-.pointer__prev:hover, .pointer__next:hover {
+.pointer__prev:hover, .pointer__next:hover, .pointer__prev:active, .pointer__next:active {
     background-color: rgba(0,0,0,0.3);
 }
 
@@ -690,7 +691,7 @@ footer {
     padding: 0.5rem;
 }
 
-.page_number:hover, .pagination_prev_next:hover {
+.page_number:hover, .pagination_prev_next:hover, .page_number:active, .pagination_prev_next:active {
 	background-color: #D9C5B4;
 }
 
