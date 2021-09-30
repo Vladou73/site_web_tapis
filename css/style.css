@@ -770,26 +770,47 @@ footer {
 }
 
 .nettoyage__sect3__img {
-    height: 200px;
-    
+    height: 200px;   
 }
 
-/* .nettoyage__sect3__figure>figcaption {
-    background: rgba(0, 0, 0, 0.5);
-    width: 100%;
-    color: white;
-    height: 1.5rem;
-    display: block;
-    float: left;
-    position: absolute;
-    bottom: 0;
-  } */
-
-  .nettoyage__sect3>a {
+.nettoyage__sect3>a {
       margin-top: 2rem;
       margin-bottom: 1rem;
   }
 
+/* NOTRE SOCIETE */
+
+.societe__section {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.societe__section__container {
+    display: flex;
+    width: 100%;
+}
+
+.societe__section__container > * {
+    width: 45%;
+    margin-right: 2rem;
+}
+
+.societe__section img {
+    width: 100%;
+}
+
+.societe__section figcaption {
+    font-size: 0.8rem;
+}
+
+.multiple-paragraphs__container > p{
+    padding-bottom: 0.4rem;
+}
 
 /* MEDIA QUERIES */
 
