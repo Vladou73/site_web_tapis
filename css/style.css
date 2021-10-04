@@ -505,7 +505,7 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;   
+    /* align-items: center;    */
 
     margin-right: 2em;
 }
@@ -519,6 +519,7 @@ footer {
 .contact__info__store__icon {
     width: 1.5rem;
     height: 1.5rem;
+    margin-left: 25%;
     margin-right: 0.5rem;
 }
 
@@ -534,6 +535,13 @@ footer {
     font-style:italic;
 }
 
+#paragraphe_horaires {
+    display: flex;
+    flex-direction: column;
+    /* align-items:center; */
+
+
+}
 
 .contact__info__maps {
     margin-left: 2em;
@@ -958,5 +966,19 @@ footer {
     .modal {
         position: absolute;
         top: 100%;
+    }
+}
+
+/* NOTRE SOCIETE */
+@media (max-width: 800px) {
+    .societe__section__container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .societe__section__container > * {
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+        margin-bottom: 1rem;
     }
 }
