@@ -808,6 +808,14 @@ footer {
     font-size: 0.8rem;
 }
 
+.societe__section figcaption h3 {
+    font-weight: bold;
+}
+
+.societe__section figcaption p {
+    font-style: italic;
+}
+
 .multiple-paragraphs__container > p{
     padding-bottom: 0.4rem;
 }
