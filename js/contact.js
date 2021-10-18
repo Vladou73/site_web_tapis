@@ -1,6 +1,6 @@
 const contact = {
     init:function(){
-        console.log('contact script initialized');
+        // console.log('contact script initialized');
         // https://dashboard.emailjs.com/admin/integration
         emailjs.init('user_hRzpVxI2UEa1mITnxqPRh');
         contact.eventListenersInitialization();
