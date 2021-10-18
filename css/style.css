@@ -659,9 +659,14 @@ footer {
 .catalogue__sect3__article {
     width:18%;
     margin-right: 7%;
+    margin-bottom: 2rem;
 }
-.catalogue__sect3__article>img {
+.catalogue__sect3__article img {
     width:100%;
+}
+
+.catalogue__sect3__article figcaption {
+    text-align: center;
 }
 
 /* CATALOGUE PAGINATION */
@@ -812,15 +817,15 @@ footer {
     width: 100%;
 }
 
-.societe__section figcaption {
+figcaption {
     font-size: 0.8rem;
 }
 
-.societe__section figcaption h3 {
+figcaption h3 {
     font-weight: bold;
 }
 
-.societe__section figcaption p {
+figcaption p {
     font-style: italic;
 }
 
@@ -934,6 +939,7 @@ footer {
     .catalogue__sect3__article {
         width:55%;
         margin:0;
+        margin-bottom: 2rem;
     }
 
 }

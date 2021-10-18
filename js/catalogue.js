@@ -98,6 +98,7 @@ const app = {
     // const newImg = newCataloguelArticle.querySelector('img');
     const newArticle = newCataloguelArticle.querySelector('a');
     const newImg = newCataloguelArticle.querySelector('img');
+    const newFigcaption = newCataloguelArticle.querySelector('figcaption');
   
     //set image attributes with json data
     //fetch photos and min photos paths
@@ -107,17 +108,26 @@ const app = {
     newImg.setAttribute('alt',elem.title);
   
     app.addDetailsToModalImg(elem, newArticle);
+    app.addFigcaptionDetails(elem, newFigcaption);
 
     //insert newImg in DOM
     parent.appendChild(newArticle);
   }
   
   app.addDetailsToModalImg = function(elem, article) {
-    articleDetails = `
+    let articleDetails = `
       <p>${elem.title}</p>
       <p>Dimensions : ${elem.width} x ${elem.length}</p>
       <p>Durée de fabrication : ${elem.manufacturing_duration} ${(elem.manufacturing_duration>1)? "ans" : "an"}</p>`
     article.setAttribute('data-title', articleDetails)
+  }
+
+  app.addFigcaptionDetails = function(elem, figcaption) {
+    let figcaptionDetails = `
+      <h3>${elem.title}</h3>
+      <p>Dimensions : ${elem.width} x ${elem.length}</p>
+      <p>Durée de fabrication : ${elem.manufacturing_duration} ${(elem.manufacturing_duration>1)? "ans" : "an"}</p>`
+    figcaption.insertAdjacentHTML('afterbegin', figcaptionDetails);
   }
 
   app.addCarouselSlideToDom = function(elem) {
