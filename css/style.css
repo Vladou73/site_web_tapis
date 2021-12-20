@@ -181,9 +181,13 @@ h1, h2, h3, .header-top, .header-nav__container {
     background-color: #FEE1E1;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
     padding: 0.5rem;
 
-    color: #CF4949;
+    /* color: #CF4949; */
+    color: #d32d2d;
     /* font-size: 0.9rem; */
     font-weight: bold;
     font-style: italic;
@@ -200,6 +204,7 @@ h1, h2, h3, .header-top, .header-nav__container {
 }
 
 .home-section__1 {
+    /* background-image: url(../images/promo/pub_bandeau_google.jpg); */
     background-image: url(../images/catalogue_full_width/3092_situ_1.jpg);
     justify-content: flex-end;
 }
@@ -844,6 +849,9 @@ figcaption p {
         font-size:0.9rem;
         text-align:center;
     }
+    .hide-on-phone {
+        display:none;
+    }
 }
 
 /* HEADER */
@@ -905,7 +913,6 @@ figcaption p {
     .home-section__text>*{
         margin-bottom:1.5em;
     }
-    
 }
 
 /* NETTOYAGE */
@@ -916,9 +923,6 @@ figcaption p {
     .nettoyage__sect3__container__img {
         flex-direction: column;
         align-items: center;
-    }
-    .hide-on-phone {
-        display:none;
     }
 }
 
