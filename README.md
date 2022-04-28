@@ -6,19 +6,16 @@ Ce site web a été codé côté front-end uniquement, il n'y as pas de back-end
 
 ## Architecture du site
 
-4 pages : Accueil, Catalogue, Réparation/Nettoyage, Contact
+5 pages : Accueil, Catalogue, Réparation/Nettoyage, Contact, Notre société
 
 ## Outils utilisés
 
 HTML, CSS, vanilla JS, jquery
-- Aucun framework javascript n'a été utilisé
+- Aucun framework javascript n'a été utilisé.
 - J'ai utilisé la librairie https://www.npmjs.com/package/lightbox2 pour les modales de tapis
 - En l'absence de serveur backend j'ai utilisé le service https://www.emailjs.com/ pour gérer les emails de contact via un formulaire html
 
-## Plan de développement
+## Optimisation SEO
 
-- Pré-production : réalisation des wireframes et maquettes sur https://www.figma.com/
-
-1) Mise en production du site web en avril avec 4 pages, non responsive, non optimisé pour le SEO
-2) Mai : intégration du responsive, optimisations du code
-3) Juin : optimisation accessibilité et SEO
+- sitemap
+- connexion à la google search console
