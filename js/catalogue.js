@@ -95,10 +95,10 @@ const app = {
   app.addCatalogueArticleToDom = function(elem, parent) {
     //create a clone of the template
     const newCataloguelArticle = document.importNode(document.getElementById('template__catalogue-article').content, true);
-    // const newImg = newCataloguelArticle.querySelector('img');
     const newArticle = newCataloguelArticle.querySelector('a');
     const newImg = newCataloguelArticle.querySelector('img');
     const newFigcaption = newCataloguelArticle.querySelector('figcaption');
+    const newMask = newCataloguelArticle.querySelector('span');
   
     //set image attributes with json data
     //fetch photos and min photos paths
@@ -109,6 +109,10 @@ const app = {
   
     app.addDetailsToModalImg(elem, newArticle);
     app.addFigcaptionDetails(elem, newFigcaption);
+
+    if (elem.sold) {
+      newMask.classList.add('mask-sold');
+    }
 
     //insert newImg in DOM
     parent.appendChild(newArticle);

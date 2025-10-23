@@ -38,9 +38,9 @@ const contact = {
             modal.classList.add('fail-modal');
             modal.classList.remove('success-modal');
             if (error.text = 'The g-recaptcha-response parameter not found') {
-                modal.querySelector('p').innerHTML = 'Veuillez cocher la case "Je ne suis pas un robot svp"'
+                modal.querySelector('p').innerHTML = 'Veuillez cocher la case "Je ne suis pas un robot"'
             } else {
-                modal.querySelector('p').innerHTML = 'Une erreur est survenue, veuillez réessayer svp"'
+                modal.querySelector('p').innerHTML = 'Une erreur est survenue, veuillez réessayer svp'
             }
         }
         //Show modal

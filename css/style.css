@@ -185,12 +185,13 @@ h1, h2, h3, .header-top, .header-nav__container {
     flex-wrap: wrap;
     flex-direction: column;
     padding: 0.5rem;
+    line-height: 1.5rem;
 
     /* color: #CF4949; */
     color: #d32d2d;
     /* font-size: 0.9rem; */
     font-weight: bold;
-    font-style: italic;
+    /*font-style: italic; */
 }
 
 /* HOME MAIN */
@@ -442,7 +443,6 @@ footer {
     display: none;
     position: fixed;
     z-index: 10; 
-    position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -670,8 +670,26 @@ footer {
     width:100%;
 }
 
+.catalogue__sect3__article figure {
+    position: relative;
+}
+
 .catalogue__sect3__article figcaption {
     text-align: center;
+}
+
+.mask-sold {
+    display: inherit;
+    position: absolute;
+    top: 30%;
+    background: rgb(211 45 45 / 71%);
+    color: white;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    transform: rotate(20deg);
 }
 
 /* CATALOGUE PAGINATION */
@@ -974,8 +992,8 @@ figcaption p {
         margin-left:0;
     }
     .modal {
-        position: absolute;
-        top: 100%;
+        position: fixed;
+        top: 50%;
     }
 }
 
