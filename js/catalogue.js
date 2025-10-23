@@ -99,7 +99,7 @@ const app = {
     const newImg = newCataloguelArticle.querySelector('img');
     const newFigcaption = newCataloguelArticle.querySelector('figcaption');
     const newMask = newCataloguelArticle.querySelector('span');
-  
+
     //set image attributes with json data
     //fetch photos and min photos paths
     newImg.setAttribute('src', "./images/catalogue_min/" + elem.ref + '_' + elem.section + '_min.jpg');
@@ -112,6 +112,8 @@ const app = {
 
     if (elem.sold) {
       newMask.classList.add('mask-sold');
+    } else {
+      newMask.classList.add('mask-hide');
     }
 
     //insert newImg in DOM

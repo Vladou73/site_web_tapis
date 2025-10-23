@@ -692,6 +692,10 @@ footer {
     transform: rotate(20deg);
 }
 
+.mask-hide {
+    display: none;
+}
+
 /* CATALOGUE PAGINATION */
 
 .pagination_container {
